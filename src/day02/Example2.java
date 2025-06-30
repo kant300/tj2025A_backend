@@ -1,18 +1,20 @@
-package day02;
+package day02;  // 현재 자바파일 폴더명
 
 import java.util.Scanner;
 
-public class Example2 {
+public class Example2 { // class s
+    // main 엔터
     public static void main(String[] args) {  //main start
 
         /* 입력함수 : 콘솔화면엣 키보드로부터 입력받음 방법
              1. new Scanner( System.in );     : 시스템(컴퓨터)로 부터 입력관련 기능(함수) 제공하는 객체
                  * Scanner scan = new Scanner( System.in );
              2. 종류
-               (1) .next() : 키보드로부터 입력받은 문자열 반환, 단] 띄어쓰기 불가능.
-               (2) .next() : 입력받은 문자열(String)반환, 단] 띄어쓰기 가능
-                    * 주의할점 : nextLine() 앞에 다른 next()가 존재하면 enter(완료)를 하나로 포함하므로 문제발생
-                    * 해결방안 : nextLine() 앞에 무의미한 next() 하나 추가한다.
+               (1) .next() : 키보드로부터 입력받은 문자열(String) 반환, 단] 띄어쓰기 불가능.
+                    String 변수명 = scan.next()
+               (2) .nextLine() : 입력받은 문자열(String)반환, 단] 띄어쓰기 가능
+                    * 주의할점 : nextLine() 앞에 다른 next()가 존재하면 enter(기행)를 하나로 포함하므로 문제발생
+                    * 해결방안 : nextLine() 앞에 무의미한 nextLine() 하나 추가한다.
                     String 변수명 = scan.nextLine();
 
          */
@@ -21,9 +23,10 @@ public class Example2 {
 
         // [1] Scanner객체로부터 .next() 함수 호출
         //new Scanner( System.in ).next();
+
         // [2] Scanner 객체를 변수에 저장하여 재활용 , 타입 변수명 = 자료;
-        Scanner scan = new Scanner ( System.in );
-        // Scanner(객체타입) scan(변수명) =(대입) new Scanner(System.in)(객체)
+        Scanner scan = new Scanner ( System.in );   // Scanner(객체타입) scan(변수명) =(대입) new Scanner(System.in)(객체)
+
         // 1. next()
         System.out.printf("1.next() : ");
         String  str1 = scan.next();    // == new Scanner( System.in ).next();

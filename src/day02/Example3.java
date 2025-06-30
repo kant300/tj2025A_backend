@@ -20,7 +20,8 @@ public class Example3 {  // class s
             7. 삼항연산자
                 조건 ? 참 : 거짓
                 조건1 ? 참1 : 조건2 ? 참2 : 거짓   vs   if
-            8.
+
+           * 문자열 비교 : "문자열A".equals("문자열B")
 
          */
         int x = 10 ; int y = -3;
@@ -50,12 +51,13 @@ public class Example3 {  // class s
         System.out.println( x-- );   // 12, 출력후 1감소
         System.out.println( --x );   // 10 , 1감소후 출력
         // [6] 복합 대입연산자
-        int z = 30;
+        int z = 30;  // 오른쪽 30(자료) 이라는 자료를 왼쪽 z변수에 대입한다.
         z += 10;    // z(40)
         z += 1;    // vs   z++    vs    z = z + 1
-        // [7] 삼항연산자
-        System.out.println( x >= 60 ? "합격" : "불합격");    //만약에 x가 60이상이면 "합격" 아니면 "불합격"
-        // [8] 문자열 비교는 "문자열A".equals("문자열B");  문자열 비교와 리터럴 비교 다르다.
+        // [7] 삼항연산자 , 조선 ? 참 : 거짓
+        System.out.println( x >= 60 ? "합격" : "불합격");
+        // '불합격' , 만약에 x가 60이상이면 "합격" 아니면 "불합격" 반환 vs 조건문 (if)
+        // [8] 문자열 비교 :  "문자열A".equals("문자열B");  문자열 비교와 리터럴 비교 다르다.
         //System.out.println( "10" == 10 );
         System.out.println( "10".equals("10") );  // true
         System.out.println( "admin".equals("admin") );  // true
