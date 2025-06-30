@@ -1,4 +1,4 @@
-package day01; // 현재 .java 파일 위치한 폴더명
+package day01_0627; // 현재 .java 파일 위치한 폴더명
 
 public class Example2 { // class start : 모든 자바코드는 클래스안에 작성한다.
 

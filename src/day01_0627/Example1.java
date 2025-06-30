@@ -2,7 +2,7 @@
 /*
     여러줄 주석
 */
-package day01; // 패키지(폴더) 현재 .JAVA 파일이 위치한 패키지명
+package day01_0627; // 패키지(폴더) 현재 .JAVA 파일이 위치한 패키지명
 
 public class Example1 { // class start
     // public   : 프로젝트내 모든곳에서 (클래스) 호출 가능한 키워드 뜻

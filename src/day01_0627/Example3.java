@@ -1,4 +1,4 @@
-package day01; // 패키지명
+package day01_0627; // 패키지명
 
 public class Example3 { // class start
     public static void main(String[] args) { // main start
