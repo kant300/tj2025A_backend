@@ -65,7 +65,7 @@ public class Example2 {
         double value6 = scan.nextDouble();
         System.out.println("8. nextDouble() result : " + value6 );
 
-        // 9. nextBoolean();
+        // 9. nextBoolean(); : 입력받은 논리(boolean) 반환, 입력값이 boolean 허용범위 벗어나면 오류
         System.out.print("9. nextBoolean() " );
         boolean value7 = scan.nextBoolean();
         System.out.println("9. nextBoolean() result : " + value7 );
