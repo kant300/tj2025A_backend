@@ -66,5 +66,24 @@ public class 실습1 { // 자바코드는 모두 클래스안에서 작성해야
 
         // 5.
         System.out.printf( "제 이름은 %s, 나이는 %d세 , 키는 %.1fcm 입니다. \n" ,name , age2 , height);
+
+        // 6. 이스케이프(제어문자)
+        System.out.println("|\\_/|");
+        System.out.println("|q p|   /}");
+        System.out.println("( 0 ) \"\"\"\\");
+        System.out.println("|\"^\"`    |");
+        System.out.println("||_/=\\\\__|");
+
+        // 7.
+        int num = 1;
+        String writer = "유재석";
+        String content = "안녕하세요!";
+        System.out.printf("===========방문록 ============ \n");
+        System.out.printf("%s \t %s \t %s \n" , "번호" , "작성자" , "방문록");
+        System.out.printf("%2d \t %s \t %s \n" , num , writer , content);
+        System.out.printf("============================= \n");
+
+
+
     } //main end
 } //class end
