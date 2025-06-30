@@ -44,12 +44,15 @@ package day02;  // 현재 .java 파일의 폴더/패키지 위치
 
 
 public class 실습1 { // 자바코드는 모두 클래스안에서 작성해야 한다. // class start
-    //main+엔터 : 실행할 코드는 모두 main함에서 작성한다.
-    public static void main(String[] args) { // class start
+
+    //System.out.print("aaa");  main함수 밖에서 함수실행 불가능
+
+    //main+엔터 : 실행할 코드는 모두 main함수안에서 작성한다.
+    public static void main(String[] args) { // main start
 
         // 1. System.out.println(); sout + 엔터
-        System.out.println( 25 );
-        System.out.println( "홍길동");
+        System.out.println( 25 );   // 명령어 끝에 ;세미콜론 필수
+        System.out.println( "홍길동"); // ctrl+shift+f10
 
         // 2. 변수란? 하나의 자료를 저장하는 메모리 공간
         int age = 40;   //int(저장공간크기) age(공간이름) =(대입) 40(리터럴/자료);
@@ -61,10 +64,10 @@ public class 실습1 { // 자바코드는 모두 클래스안에서 작성해야
         double height = 189.25;
         String motto = "열심히 살자";
 
-        // 4.
+        // 4. +연결연산자, "문자열" + 변수명 + "문자열" + 변수명
         System.out.println( "제 이름은 "+name+" , 나이는 "+age2+" 세 , 키는 "+height+"cm입니다. ");
 
-        // 5.
+        // 5. 서식출력
         System.out.printf( "제 이름은 %s, 나이는 %d세 , 키는 %.1fcm 입니다. \n" ,name , age2 , height);
 
         // 6. 이스케이프(제어문자)
@@ -79,8 +82,8 @@ public class 실습1 { // 자바코드는 모두 클래스안에서 작성해야
         String writer = "유재석";
         String content = "안녕하세요!";
         System.out.printf("===========방문록 ============ \n");
-        System.out.printf("%s \t %s \t %s \n" , "번호" , "작성자" , "방문록");
-        System.out.printf("%2d \t %s \t %s \n" , num , writer , content);
+        System.out.printf("%-5s \t %-5s \t %-10s \n" , "번호" , "작성자" , "방문록");
+        System.out.printf("%-6d \t %-5s \t %-10s \n" , num , writer , content);
         System.out.printf("============================= \n");
 
 
