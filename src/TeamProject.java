@@ -1,4 +1,4 @@
-public class TeamProject1 {
+public class TeamProject {
     public static void main(String[] args) {
         Developer nina = new Developer("나나" , true , true);
         Developer teammate = new Developer("팀원A" , false , false);
