@@ -259,22 +259,21 @@ public class 실습4 { //class s
 
         // [13]
         System.out.println("13) 연도를 입력하세요: "); int year = scan.nextInt();
-        if( (  ) || (  ) ){ //  연도가 4의 배수이면서, 100의 배수는 아닐 때  또는  연도가 400의 배수일 때
-
+        if( ( year % 4 == 0 && year % 100 != 0 ) || ( year % 400 == 0 ) ){ //  연도가 4의 배수이면서, 100의 배수는 아닐 때  또는  연도가 400의 배수일 때
+            System.out.println("윤년");
         }
-        else {   }
+        else { System.out.println("평년"); }
 
-        // [14] 변수들간의 값 교체( 스왑 = swap ) : a = b  vs  let temp = a; a = b : b = temp;
+        // [14] 변수들간의 값 교체( 스왑 = swap ) : a = b  vs  let temp = a; a = b ; b = temp;
         // 변수란 ? 하나의 자료만 저장 가능한 공간  즉] a란 변수에 b값이 들어오면 기존 a값은 사라진다.
         // 비교 :  a b c : (1) a > b (2) a > c (3) b > c
         System.out.println("14) 정수1 : "); int a = scan.nextInt();
         System.out.println("14) 정수2 : "); int b = scan.nextInt();
         System.out.println("14) 정수3 : "); int c = scan.nextInt();
-        int array =
-        if( a > b ){ int temp = a; a = b : b = temp; } //a 가 b 보다 크면 a를 temp변수에 넣고, b는 a변수에 넣고 , b에 temp에 넣는다
-        if( a > c ){ int temp = a; a = c : c = temp; }
-        if( b > c ){ int temp = b; b = c : c = temp; }
-        System.out.println(" %d -> %d -> %d \n" , a , b , c );
+        if( a > b ){ int temp = a; a = b ; b = temp; } //a 가 b 보다 크면 a를 temp변수에 넣고, b는 a변수에 넣고 , b에 temp에 넣는다
+        if( a > c ){ int temp = a; a = c ; c = temp; }
+        if( b > c ){ int temp = b; b = c ; c = temp; }
+        System.out.printf(" %d -> %d -> %d \n" , a , b , c );
 
 
 
@@ -283,9 +282,10 @@ public class 실습4 { //class s
         System.out.println("15) 플레이어2 (0:가위, 1:바위, 2:보): "); int p2 = scan.nextInt();
         // 비교 : 방법1 )  p1이 이기는 조건 ( p1==0 && p2==2 , p1==1 && p2==0 , p1==2 && p2==1 )
         // 방법2 )  p1이 이기는 조건 p1 == ( p2 + 1 ) % 3
-        if( (  ) || (  ) || (  ) ){}
-        else if(){}
-        else{  }
+        if( ( p1==0 && p2==2 ) || ( p1==1 && p2==0 ) || ( p1==2 && p2==1 ) )
+        { System.out.println( "플레이어1 승리"); }
+        else if( p1 == p2 ){ System.out.println("무승부"); }
+        else{ System.out.println( "플레이어2 승리" ); }
 
 
 
