@@ -167,8 +167,8 @@ public class 실습4 { //class s
         // [3] 로그인 = 비교R(조회) , 회원가입 = 저장 , 비밀번호 = 비교R , 비밀번호 변경 = 비교
         System.out.println("3) 아이디 : "); String id = scan.next();
         System.out.println("3) 비밀번호 : "); String pwd = scan.next();
-        if( id.equals("admin") && pwd.equals("1234") ){
-            System.out.println("로그인 성공");
+        if( id.equals("admin") && pwd.equals("1234") ){ //id가 "admin"이면서 pwd가 "1234"이면
+            System.out.println("로그인 성공"); //"로그인 성공" 출력
         }else{
             System.out.println("로그인 실패");
         }
@@ -176,9 +176,9 @@ public class 실습4 { //class s
         // [4]
         System.out.println("4) 비밀번호 : ");   String password = scan.next();
         int pwdLen = password.length(); // "문자열".length() : 문자열의 길이(문자개수 반환 함수)
-        if( pwdLen >= 12){System.out.println("보안 등급 : 강합");}
-        else if (pwdLen >= 8) {System.out.println("보안등급 : 보통");}
-        else{ System.out.println( "보안등급 : 약함");};
+        if( pwdLen >= 12){System.out.println("보안 등급 : 강함");} //비밀번호 문자열길이가 12이상이면 "보안 등급 : 강함" 출력
+        else if (pwdLen >= 8) {System.out.println("보안등급 : 보통");} // 비밀번호 문자열길이가 8이상 12미만이면 "보안 등급 : 강함"
+        else{ System.out.println( "보안등급 : 약함");};// 비밀번호 문자열길이가 7이하이면 "보안등급 : 약함"
         // 조건1 값 < 8    true : 보안등급 보통
         // 조건2 값 >= 8 && 값 < 12
         // 조건3 값 > 12
@@ -188,15 +188,15 @@ public class 실습4 { //class s
         System.out.println("주민등록번호(-포함) 13자리를 입력하세요: 950101-2*"); String ssn = scan.next();
         char genderNum = ssn.charAt(7);   // "문자열".charAt(인덱스) : 인덱스 번째의 문자1개 반환, 8번째 ->
             // 문자(char) ' '  , == vs  문자열(String) , " "  , equals()
-        if( genderNum == '1' || genderNum == '3' ){ System.out.println( "남자" ); }
-        else{ System.out.println( "여자" ); }
+        if( genderNum == '1' || genderNum == '3' ){ System.out.println( "남자" ); } // 인덱스 7번째 문자가 '1'이거나 '3'이면 "남자"출력
+        else{ System.out.println( "여자" ); } // '1'과 '3'이 아니면 "여자"출력
 
         // 조건1 값 == 1 || 값 ==3  true : 남자
         // 조건2 값 == 2 || 값 ==4  여자
 
         // [6]
-        System.out.println(" 6) 게임점수 ");    int score = scan.nextInt();
-        if( score >= 900 ){System.out.println("A급 경품");}
+        System.out.println(" 6) 게임점수 : ");    int score = scan.nextInt();
+        if( score >= 900 ){System.out.println("A급 경품");} // 900점이상
         else if ( score >+ 700 && score <900 ) {System.out.println("B급 경품"); }  // 앞조건 충족 못할경우 900점 미만
         else{System.out.println("C급 경품");}
 
