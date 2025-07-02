@@ -1,7 +1,7 @@
 public class TeamProject {
     public static void main(String[] args) {
-        Developer nina = new Developer("나나" , true , true);
-        Developer teammate = new Developer("팀원A" , false , false);
+        TeamMember nina = new TeamMember("나나" , true , true);
+        TeamMember teammate = new TeamMember("팀원A" , false , false);
 
         Advisor 강사 = new Advisor("강사님");
 
@@ -10,12 +10,12 @@ public class TeamProject {
     } //main end
 } //class end
 
-class Developer {
+class TeamMember {
     String name;
     boolean listensToAdvice;
     boolean takesResponsibility;
 
-    public Developer(String name, boolean listensToAdvice, boolean takesResponsibility){
+    public TeamMember(String name, boolean listensToAdvice, boolean takesResponsibility){
         this.name = name;
         this.listensToAdvice = listensToAdvice;
         this.takesResponsibility = takesResponsibility;
@@ -39,10 +39,10 @@ class Advisor {
 }
 
 class Project{
-    Developer d1 , d2;
+    TeamMember d1 , d2;
     Advisor advisor;
 
-    public Project(Developer d1 , Developer d2 , Advisor advisor) {
+    public Project(TeamMember d1 , TeamMember d2 , Advisor advisor) {
         this.d1 = d1;
         this.d2 = d2;
         this.advisor = advisor;
