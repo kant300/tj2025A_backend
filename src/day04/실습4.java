@@ -200,7 +200,7 @@ public class 실습4 { //class s
         else if ( score >+ 700 && score <900 ) {System.out.println("B급 경품"); }  // 앞조건 충족 못할경우 900점 미만
         else{System.out.println("C급 경품");}
 
- */
+
 
         // [7]
         System.out.println("7) 권한");    String role = scan.next();
@@ -208,6 +208,90 @@ public class 실습4 { //class s
         else if( role.equals( "editor") ){ System.out.println( "콘텐츠 수정 및 생성 기능에 접근할 수 있습니다."); }
         else if( role.equals( "viewer") ){ System.out.println("콘텐츠 조회만 가능합니다."); }
         else{ System.out.println("정의되지 않은 역할입니다."); }
+
+        // [8]
+        System.out.println("8) 나이를 입력하세요 : ");  int age = scan.nextInt();
+        if( age >= 65 ){ System.out.println("3,000원"); }
+        else if ( age >=20 ) { System.out.println("10,000원"); }
+        else if ( age >=8 ) { System.out.println("5,000원"); }
+        else{ System.out.println("무료"); }
+
+        // [9]
+        System.out.println("9) 점수를 입력하세요 : ");  int point = scan.nextInt();
+        if( point >= 90 ){ System.out.println("A등급"); }
+        else if( point >= 80 ){ System.out.println("B등급"); }
+        else if( point >= 70 ){ System.out.println("C등급"); }
+        else{ System.out.println("재시험");}
+
+
+
+        // [10]
+        System.out.println( "총 구매 금액 : "); int money = scan.nextInt();
+        if( money >= 50000 ){ System.out.println( money * 0.9 ); } // 1 : 100% , 0.1 : 10% , 0.5 : 50%
+        else if ( money  >= 30000 ) { System.out.println( money * 0.95 ); }
+        else if ( money  >= 10000 ) { System.out.println( money * 0.99 ); }
+        else{ System.out.println( "할인없음"); }
+
+        //if( money >= 50000 ){ System.out.println( "최종 결제금액 : 구매금액 - (구매금액 * 0.1 )" ); }
+        //else if ( money  >= 30000 ) { System.out.println( "최종 결제금액 : 구매금액 - (구매금액 * 0.05 )" ); }
+        //else if ( money  >= 10000 ) { System.out.println( "최종 결제금액 : 구매금액 - (구매금액 * 0.01 )" ); }
+        //else{ System.out.println( "할인없음"); }
+
+        // [11]
+        System.out.println(" 11) 월(1~12)을 입력하세요: ");  int month = scan.nextInt();
+        if( month <= 0 || month >= 13 ) { System.out.println("잘못된 월입니다."); }
+        else if ( month >= 3 && month <= 5 ) { System.out.println("봄"); }
+        else if ( month >= 6 && month <= 8 ) { System.out.println( "여름"); }
+        else if ( month >= 9 && month <= 11 ) { System.out.println( "가을"); }
+        else { System.out.println( "겨울"); }
+ */
+
+        // [12]  임시변수를 만들어 임의의 값을 변수에 저장하여 비교후 저장
+        System.out.println("12) 정수1 : "); int 정수1 = scan.nextInt();
+        System.out.println("12) 정수2 : "); int 정수2 = scan.nextInt();
+        System.out.println("12) 정수3 : "); int 정수3 = scan.nextInt();
+        int max = 정수1; // 첫번째 입력값을 가장 큰수로 임의 지정
+        // 조건1 : max보다 큰 값을 찾기 , true : max에 값 대입
+        if( max < 정수2 ){ max = 정수2; }
+        // else if
+        if ( max < 정수3 ){ max = 정수3; }
+        System.out.println( max );
+
+        // [13]
+        System.out.println("13) 연도를 입력하세요: "); int year = scan.nextInt();
+        if( (  ) || (  ) ){ //  연도가 4의 배수이면서, 100의 배수는 아닐 때  또는  연도가 400의 배수일 때
+
+        }
+        else {   }
+
+        // [14] 변수들간의 값 교체( 스왑 = swap ) : a = b  vs  let temp = a; a = b : b = temp;
+        // 변수란 ? 하나의 자료만 저장 가능한 공간  즉] a란 변수에 b값이 들어오면 기존 a값은 사라진다.
+        // 비교 :  a b c : (1) a > b (2) a > c (3) b > c
+        System.out.println("14) 정수1 : "); int a = scan.nextInt();
+        System.out.println("14) 정수2 : "); int b = scan.nextInt();
+        System.out.println("14) 정수3 : "); int c = scan.nextInt();
+        int array =
+        if( a > b ){ int temp = a; a = b : b = temp; } //a 가 b 보다 크면 a를 temp변수에 넣고, b는 a변수에 넣고 , b에 temp에 넣는다
+        if( a > c ){ int temp = a; a = c : c = temp; }
+        if( b > c ){ int temp = b; b = c : c = temp; }
+        System.out.println(" %d -> %d -> %d \n" , a , b , c );
+
+
+
+        // [15]
+        System.out.println("15) 플레이어1 (0:가위, 1:바위, 2:보): "); int p1 = scan.nextInt();
+        System.out.println("15) 플레이어2 (0:가위, 1:바위, 2:보): "); int p2 = scan.nextInt();
+        // 비교 : 방법1 )  p1이 이기는 조건 ( p1==0 && p2==2 , p1==1 && p2==0 , p1==2 && p2==1 )
+        // 방법2 )  p1이 이기는 조건 p1 == ( p2 + 1 ) % 3
+        if( (  ) || (  ) || (  ) ){}
+        else if(){}
+        else{  }
+
+
+
+
+
+
 
     }//main e
 } // class e
