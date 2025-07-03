@@ -58,8 +58,6 @@ public class BoardService1 {    //class s
                     System.out.println(" 내용 : " + content3);
                     System.out.println("------------------------------------");
                 }
-
-
             }
         }   // 무한루프 끝 for e
 
