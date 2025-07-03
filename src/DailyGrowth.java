@@ -1,6 +1,8 @@
+/*
 public class DailyGrowth {
     public static void main(String[] args) {
-        TeamMember nina = new TeamMember("니나");
+        TeamMember nina =
+                new TeamMember("니나");
 
         nina.learn("자바 문법");
         nina.fixBug("문자열 오류");
@@ -54,3 +56,4 @@ class TeamDeveloper {
         System.out.println("\uD83D\uDCAA 오늘도 한 걸음 더 성장했습니다.");
     }
 }
+*/
