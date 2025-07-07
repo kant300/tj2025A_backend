@@ -53,6 +53,8 @@ JAVA] 실습7 : 클래스와 객체의멤버변수
  */
 package day06;
 
+import java.util.Scanner;
+
 // [1]
 class Book {
     String title;
@@ -128,6 +130,38 @@ public class 실습7 {
         if( ( play1.power + play1.speed ) > ( play2.power + play2.speed ) ){
             System.out.println( play1. name );
         }else{ System.out.println( play2.name ); }
+
+        // [9]
+        MenuItem menu1 = new MenuItem();
+        MenuItem menu2 = new MenuItem();
+        MenuItem menu3 = new MenuItem();
+        menu1.name = "김치찌개"; menu1.price = 8000; menu1.isSignature = true;
+        menu2.name = "된장찌개"; menu2.price = 8000; menu2.isSignature = false;
+        menu3.name = "계란찜"; menu3.price = 3000; menu3.isSignature = false;
+        if( menu1.isSignature == true ) {
+            System.out.println( "[ 대표메뉴 ]" + menu1.name  + ":" + menu1.price + "원"); }
+        if( menu2.isSignature == true ) {
+            System.out.println("[ 대표메뉴 ]" + menu2.name  + ":" + menu2.price + "원"); }
+        if( menu3.isSignature == true ) {
+            System.out.println("[ 대표메뉴 ]" + menu1.name + ":" + menu1.price + "원"); }
+
+
+
+        // [10]
+        UserProfile user = new UserProfile();
+        Scanner scan = new Scanner( System. in ); // 1) 입력객체 생성하여 변수에 저장
+        System.out.println("이름 :"); String name = scan.next();  // 2) 이름 입력받아 변수에 저장
+        System.out.println("나이 :"); int age = scan.nextInt();   // 2) 나이 입력받아 변수에 저장
+        System.out.println("MBTI :"); String mbti = scan.next();    //2) MBTI 입력받아 변수에 저장
+        user.name = name;   // 3) 입력받은 값들을 생성된 객체의 각 멤버 변수에 저장하세요.
+        user.age = age;
+        user.mbti = mbti;
+        System.out.println("--- 프로필 ---");
+        System.out.println(" 이름 : " + user.name + " , 나이 : " + user.age + " , MBTI : " + user.mbti );
+
+
+
+
 
 
 
