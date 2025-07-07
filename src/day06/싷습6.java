@@ -162,7 +162,7 @@ public class 싷습6 {  //class s
         // [10]
         String[] carNumbers = {"210어7125", "142가7415", "888호8888", "931나8234"};
         int[] usageMinutes = {65, 30, 140, 420};
-        for( int 기본요금 = )
+
 
 
 
