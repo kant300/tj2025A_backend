@@ -65,7 +65,7 @@ package day06;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class 싷습6 {  //class s
+public class 실습6 {  //class s
     public static void main(String[] args) {    //main s
         // [1] 배열선언과 초기화, 인덱스
         //  vs   int numbers = new int[5]; int타입의 배열 numbers 선언
