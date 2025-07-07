@@ -65,6 +65,7 @@ public class 종합과제1 {    // class s
                     System.out.println("------------------------------------");
                 }
             }
+
         }   //무한루프 끝 for e
     }   // main e
 }   // class e
