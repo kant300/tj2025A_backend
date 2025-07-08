@@ -55,13 +55,6 @@ package day06;
 
 import java.util.Scanner;
 
-// [1]
-class Book {
-    String title;
-    String author;
-    int price;
-}   // class e
-
 public class 실습7 {
     public static void main(String[] args) {
         // * 자바에서 객체 생성하기 위해서는 *클래스*필요하다.
@@ -132,14 +125,15 @@ public class 실습7 {
         }else{ System.out.println( play2.name ); }
 
         // [9]
-        MenuItem menu1 = new MenuItem();
-        MenuItem menu2 = new MenuItem();
-        MenuItem menu3 = new MenuItem();
-        menu1.name = "김치찌개"; menu1.price = 8000; menu1.isSignature = true;
-        menu2.name = "된장찌개"; menu2.price = 8000; menu2.isSignature = false;
-        menu3.name = "계란찜"; menu3.price = 3000; menu3.isSignature = false;
+        MenuItem menu1 = new MenuItem();    //MenuItem 객체 3개 생성- 객체1
+        MenuItem menu2 = new MenuItem();    //MenuItem 객체 3개 생성- 객체2
+        MenuItem menu3 = new MenuItem();    //MenuItem 객체 3개 생성- 객체3
+        menu1.name = "김치찌개"; menu1.price = 8000; menu1.isSignature = true; //첫 번째는 "김치찌개", 8000, true,
+        menu2.name = "된장찌개"; menu2.price = 8000; menu2.isSignature = false; //두 번째는 "된장찌개", 8000, false
+        menu3.name = "계란찜"; menu3.price = 3000; menu3.isSignature = false;//세 번째는 "계란찜", 3000, false
         if( menu1.isSignature == true ) {
             System.out.println( "[ 대표메뉴 ]" + menu1.name  + ":" + menu1.price + "원"); }
+        //
         if( menu2.isSignature == true ) {
             System.out.println("[ 대표메뉴 ]" + menu2.name  + ":" + menu2.price + "원"); }
         if( menu3.isSignature == true ) {
@@ -148,7 +142,8 @@ public class 실습7 {
 
 
         // [10]
-        UserProfile user = new UserProfile();
+        /*
+        UserProfile user = new UserProfile();   // UserProfile 객체를 하나 생성
         Scanner scan = new Scanner( System. in ); // 1) 입력객체 생성하여 변수에 저장
         System.out.println("이름 :"); String name = scan.next();  // 2) 이름 입력받아 변수에 저장
         System.out.println("나이 :"); int age = scan.nextInt();   // 2) 나이 입력받아 변수에 저장
@@ -158,7 +153,7 @@ public class 실습7 {
         user.mbti = mbti;
         System.out.println("--- 프로필 ---");
         System.out.println(" 이름 : " + user.name + " , 나이 : " + user.age + " , MBTI : " + user.mbti );
-
+        */
 
 
 

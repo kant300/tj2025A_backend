@@ -158,8 +158,9 @@ public class 실습6 {  //class s
             }   //for2 e
             System.out.println();   // 줄바꿈 처리
         }// for e
-
+/*
         // [10]
+
         String[] carNumbers = {"210어7125", "142가7415", "888호8888", "931나8234" }; // 차량번호 배열초기화
         int[] usageMinutes = {65, 30, 140, 420};    // 주차시간 배열 초기화
         // 각 차량에 대한 주차요금 계산 및 출력
@@ -176,6 +177,7 @@ public class 실습6 {  //class s
          * @param minutes 주차 시간 (분)
          * @return 최종 요금 (원)
          */
+        /*
     public static int parkingFee( int minutes ){
         final int BASE_FEE = 1000;         // 기본 요금: 1,000원
         final int BASE_TIME = 30;          // 기본 요금 적용 시간: 30분
@@ -206,4 +208,26 @@ public class 실습6 {  //class s
         return totalFee; // 최종 주차 요금 반환
     }   // parkingFee e
 
+}   //class e
+/*
+
+        [10]
+        // (1) 자바에서의 배열은 서로 다른 타입간의 데이터를 동일한 배열에 저장 할 수 없다.
+        String[] carNumbers = {"210어7125", "142가7415", "888호8888", "931나8234" }; // String 타입 끼리
+        int[] usageMinutes = {65, 30, 140, 420};    // int 타입 끼리
+        // (2) 배열의 순회
+        int money = 0;
+        for( int index = 0 ; index <= carNumbers.lenght - 1 ; index++ ) {
+            System.out.println( carNumbers[index] + "\t");  //모든 차량 번호 출력
+
+
+            if ( usageMinutes[index] <= 30 ) { money = 1000; }
+            else {
+                money = ((usageMinutes[index] - 30) / 10 * 500) + 1000;
+            }
+            money = money >= 20000 ? 20000 : money;
+
+        }   // for e
+*/
+    }   //main e
 }   //class e

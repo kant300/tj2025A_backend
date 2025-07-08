@@ -1,3 +1,4 @@
+/*
 package 종합.과제2;
 
 import java.util.Scanner;
@@ -30,10 +31,7 @@ public class 종합과제2 {
                 boolean check = false; // true : 저장성공 , false : 저장실패
                 for( int index = 0 ; index <= waitings.lenght - 1 ; index++ ) {// (6) 배열내 빈공간을 찾아서 빈공간에 객체 대입
                     if ( waitings[index] == null ) {    // index번째 요소가 비어(null) 있으면
-                        waiting[index] = board; // 해당 index번째 요소의 생성한 객체를 대입한다.
-                        check = true;   //상태변경
-                        break;  // 반복문종료
-                    }// if e
+                    waiting[index] = board; // 해당 index번째 요소의 생성한 객체를 대입한다.^
                 }   //for e
                 if ( check ) {
                     System.out.println("[안내] 대기 등록이 완료되었습니다.");
@@ -57,3 +55,4 @@ public class 종합과제2 {
         }   //for e
     }   //main e
 }   //class e
+*/
