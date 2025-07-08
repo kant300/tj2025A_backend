@@ -209,25 +209,27 @@ public class 실습6 {  //class s
     }   // parkingFee e
 
 }   //class e
-/*
+*/
 
-        [10]
+       // [10]
         // (1) 자바에서의 배열은 서로 다른 타입간의 데이터를 동일한 배열에 저장 할 수 없다.
         String[] carNumbers = {"210어7125", "142가7415", "888호8888", "931나8234" }; // String 타입 끼리
         int[] usageMinutes = {65, 30, 140, 420};    // int 타입 끼리
         // (2) 배열의 순회
         int money = 0;
-        for( int index = 0 ; index <= carNumbers.lenght - 1 ; index++ ) {
+        for( int index = 0 ; index <= carNumbers.length - 1 ; index++ ) {
             System.out.println( carNumbers[index] + "\t");  //모든 차량 번호 출력
-
-
+            System.out.println( usageMinutes[index]+ "\t" + "분");    // 모든 차량의 사용시간
             if ( usageMinutes[index] <= 30 ) { money = 1000; }
-            else {
+            else { // 사용요금에 30분 빼고 (10분당) 나누기 10 (나머지 없음 : int/int -> int(몫) ) * 500원 +1000원
                 money = ((usageMinutes[index] - 30) / 10 * 500) + 1000;
             }
-            money = money >= 20000 ? 20000 : money;
+            money = money >= 20000 ? 20000 : money; // 만약에 금액이 2만원 초과이면 2만원 , 아니면 금액
+            System.out.println( "최종 요금 :" + money +"원" );
 
         }   // for e
-*/
+
+
+
     }   //main e
 }   //class e

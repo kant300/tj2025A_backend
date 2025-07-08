@@ -12,7 +12,7 @@ public class 종합과제1 {    // class s
 
         // (5) for 밖에 선언 : 메모리설계
         String phone1 = null; String phone2 = null; String phone3 = null;
-        String count1 = null; String count2 = null; String count3 = null;
+        int count1 = 0; int count2 = 0; int count3 = 0;
 
         for( ; ; ) { // (1) 무한루프 시작 // for s
             // (2) 출력
@@ -30,7 +30,7 @@ public class 종합과제1 {    // class s
                 System.out.println("전화번호 : ");
                 String phone = scan.next();
                 System.out.println("인원수 : ");
-                String count = scan.next();
+                int count = scan.nextInt();
                 if (phone1 == null) {   // 대기 공간1 이 비어있는지
                     phone1 = phone;
                     count1 = count;    // 입력받은 값을 대입
