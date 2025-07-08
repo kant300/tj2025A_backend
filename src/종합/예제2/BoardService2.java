@@ -1,4 +1,4 @@
-/*
+
 package 종합.예제2;
 
 // step1 : 반복적인 메인(화면)출력
@@ -30,8 +30,8 @@ public class BoardService2 {    //class s
                 String writer = scan.next();
                 // ** 배열내 빈공간을 찾아 빈공간에 입력받은 값 대입한다.
                 boolean check = false;  // false : 저장실패, true: 저장성공
-                for (int index = 0; index <= content.length - 1; index++) {   // * 향상된 for 문 vs 일반 for 문
-                    if (content[index] == null) {   // 만약에 index번째가 null(비어있으면) 이면
+                for (int index = 0; index <= contents.length - 1; index++) {   // * 향상된 for 문 vs 일반 for 문
+                    if (contents[index] == null) {   // 만약에 index번째가 null(비어있으면) 이면
                         contents[index] = content;
                         contents[index] = writer; // 입력받은 값 대입한다.
                         check = true;
@@ -67,4 +67,3 @@ public class BoardService2 {    //class s
     }   //main e
 
 }   //class e
-*/

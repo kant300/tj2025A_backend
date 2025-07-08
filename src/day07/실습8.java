@@ -35,6 +35,21 @@ public class 실습8 {
         boolean result6 = prod1.sell( 5 );
         System.out.println( result6 );  // true
 
+        // [7]
+        Visualizer visual = new Visualizer();// 객체생성
+        //getStars(5)를 호출하여 반환된 문자열 "★★★★★"를 출력
+        /* String stars = Visualizer.getStars(5);
+        System.out.println(stars); */
+
+        // [8]
+        ParkingLot parking = new ParkingLot(); // 객체생성
+        int money = 0;
+
+
+
+
+
+
 
 
 
