@@ -1,4 +1,4 @@
-/*
+
 package 종합.과제2;
 
 import java.util.Scanner;
@@ -29,16 +29,19 @@ public class 종합과제2 {
                 waiting.count = count;
                 // (6) 배열내 빈공간을 찾아서 빈공간에 객체대입
                 boolean check = false; // true : 저장성공 , false : 저장실패
-                for( int index = 0 ; index <= waitings.lenght - 1 ; index++ ) {// (6) 배열내 빈공간을 찾아서 빈공간에 객체 대입
+                for( int index = 0 ; index <= waitings.length - 1 ; index++ ) {// (6) 배열내 빈공간을 찾아서 빈공간에 객체 대입
                     if ( waitings[index] == null ) {    // index번째 요소가 비어(null) 있으면
-                    waiting[index] = board; // 해당 index번째 요소의 생성한 객체를 대입한다.^
+                        waitings[index] = waiting; // 해당 index번째 요소의 생성한 객체를 대입한다.^
+                        check = true ;
+                        break;
+                    }
                 }   //for e
                 if ( check ) {
                     System.out.println("[안내] 대기 등록이 완료되었습니다.");
                 }   // (6) 안내
-                else if{ System.out.println("[경고] 더 이상 대기 등록을 할 수 없습니다."); }
+                else { System.out.println("[경고] 더 이상 대기 등록을 할 수 없습니다."); }
 
-            }else if ( choose == 2 ) {    // (4) '2'번 입력시
+            }else if( choose == 2 ) {    // (4) '2'번 입력시
                 System.out.println("============= 대기 현황 =============");
                 // (7) 배열내 요소(Waiting객체) 가 비어있지 않으면 Waiting 객체 출력하시오
                 for( int index = 0; index <= waitings.length - 1 ; index++ ) {
@@ -55,4 +58,3 @@ public class 종합과제2 {
         }   //for e
     }   //main e
 }   //class e
-*/
