@@ -131,18 +131,23 @@ public class 실습7 {
         menu1.name = "김치찌개"; menu1.price = 8000; menu1.isSignature = true; //첫 번째는 "김치찌개", 8000, true,
         menu2.name = "된장찌개"; menu2.price = 8000; menu2.isSignature = false; //두 번째는 "된장찌개", 8000, false
         menu3.name = "계란찜"; menu3.price = 3000; menu3.isSignature = false;//세 번째는 "계란찜", 3000, false
-        if( menu1.isSignature == true ) {
-            System.out.println( "[ 대표메뉴 ]" + menu1.name  + ":" + menu1.price + "원"); }
-        //
-        if( menu2.isSignature == true ) {
-            System.out.println("[ 대표메뉴 ]" + menu2.name  + ":" + menu2.price + "원"); }
-        if( menu3.isSignature == true ) {
-            System.out.println("[ 대표메뉴 ]" + menu1.name + ":" + menu1.price + "원"); }
+        if( menu1.isSignature == true ) {// if문을 사용하여 isSignature가 true인 메뉴 객체를 찾아
+            //System.out.println( "[ 대표메뉴 ]" + menu1.name  + ":" + menu1.price + "원"); }
+            //System.out.printf("[%s] [%s] : [%d]원 \n" , menu1.name , menu1.isSignature , menu1.price ); }
+            System.out.printf("[대표메뉴] %s : %d원 \n", menu1.name, menu1.price);
+        }
+        if( menu2.isSignature ) {
+            //System.out.println("[ 대표메뉴 ]" + menu2.name  + ":" + menu2.price + "원"); }
+            System.out.printf("[%s] [%s] : [%d]원 \n" , menu2.name , menu2.isSignature , menu2.price ); }
+        if( menu3.isSignature ) {
+            //System.out.println("[ 대표메뉴 ]" + menu1.name + ":" + menu1.price + "원"); }
+            System.out.printf("[%s] [%s] : [%d]원  \n" , menu3.name , menu3.isSignature , menu3.price);
+        }
 
 
 
         // [10]
-        /*
+
         UserProfile user = new UserProfile();   // UserProfile 객체를 하나 생성
         Scanner scan = new Scanner( System. in ); // 1) 입력객체 생성하여 변수에 저장
         System.out.println("이름 :"); String name = scan.next();  // 2) 이름 입력받아 변수에 저장
@@ -152,8 +157,9 @@ public class 실습7 {
         user.age = age;
         user.mbti = mbti;
         System.out.println("--- 프로필 ---");
-        System.out.println(" 이름 : " + user.name + " , 나이 : " + user.age + " , MBTI : " + user.mbti );
-        */
+        //System.out.println(" 이름 : " + user.name + " , 나이 : " + user.age + " , MBTI : " + user.mbti );
+        System.out.printf("이름 : [%s] 나이 : [%d] MBTI : [%s] \n" , user.name , user.age , user.mbti );
+
 
 
 
