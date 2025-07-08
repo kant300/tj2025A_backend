@@ -40,15 +40,17 @@ public class 실습8 {
         //getStars(5)를 호출하여 반환된 문자열 "★★★★★"를 출력
         /* String stars = Visualizer.getStars(5);
         System.out.println(stars); */
-
+/*
         // [8]
         ParkingLot parking = new ParkingLot(); // 객체생성
-        int money = 0;
+
+        int feeFor65Minutes = parkingLot.calculateFee(65); // <-- '65'가 minutes 매개변수로 전달됩니다.
+        int feeFor140Minutes = parkingLot.calculateFee(140); // <-- '140'이 minutes 매개변수로 전달됩니다.
 
 
 
 
-
+*/
 
 
 
