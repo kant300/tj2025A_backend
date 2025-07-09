@@ -52,6 +52,8 @@ package day08;
 
  */
 
+import java.util.Scanner;
+
 public class 실습9 {
     public static void main(String[] args) {
         // [1] Book 클래스
@@ -88,15 +90,48 @@ public class 실습9 {
 
 
         // [6]  Member 클래스
+        Member member = new Member(  );
+        System.out.printf(" %s %s \n " , member.id , member.isLogin );
+
 
 
         // [7] Television 클래스
+        //(채널 7, 볼륨 20) 상태를 가진 Television 객체를 생성
+        Television television = new Television( 7, 20 );
+        System.out.println("채널 : " + television.channel + ", 볼륨 : " + television.volume);
+
+
+
 
         // [8] Player 클래스
+        Player player1 = new Player("손흥민", 90, 95);
+        Player player2 = new Player("이강인", 85, 92);
+        System.out.println( player1.name + " , " + player1.power + " , " + player1.speed );
+        System.out.println( player2.name + " , " + player2.power + " , " + player2.speed );
+
+
+
+
 
         // [9] MenuItem 클래스
+        MenuItem menuItem = new MenuItem("김치찌개", 8000, true);
+        if( menuItem.isSignature == true ) { //isSignature가 true인지 확인한 후
+            System.out.printf( "[대표메뉴] [%s] : [%d]원  \n" , menuItem.name , menuItem.price);
+        }
+
+
 
         // [10] UserProfile 클래스
+        Scanner scan = new Scanner( System.in );
+        //Scanner를 사용하여 사용자로부터 이름, 나이, MBTI를 입력받으세요
+        System.out.println("이름 : "); String name = scan.next();
+        System.out.println("나이 : "); int age = scan.nextInt();
+        System.out.println("MBTI : "); String mbti = scan.next();
+        // UserProfile 객체를 생성
+        UserProfile userProfile = new UserProfile( name , age , mbti );
+        System.out.printf(" 이름 : %s , 나이 : %d , MBTI : %s \n " , userProfile.name , userProfile.age , userProfile.mbti );
+
+
 
 
 

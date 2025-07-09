@@ -158,7 +158,7 @@ public class 실습7 {
         user.mbti = mbti;
         System.out.println("--- 프로필 ---");
         //System.out.println(" 이름 : " + user.name + " , 나이 : " + user.age + " , MBTI : " + user.mbti );
-        System.out.printf("이름 : [%s] 나이 : [%d] MBTI : [%s] \n" , user.name , user.age , user.mbti );
+        System.out.printf("[이름] : %s , [나이] : %d , [MBTI] : %s \n" , user.name , user.age , user.mbti );
 
 
 
