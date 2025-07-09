@@ -35,22 +35,27 @@ public class 실습8 {
         boolean result6 = prod1.sell( 5 );
         System.out.println( result6 );  // true
 
-        // [7]
+        // [7] Visualizer 클래스 만드는 이유 :
+        // 자바는 실행/컴파일 클래스 단위로 처리한다. 모든 코드는 클래스 안에 존재해야 한다.
         Visualizer visual = new Visualizer();// 객체생성
+        String result = visual.getStars( 5 );
+        System.out.println( result );
         //getStars(5)를 호출하여 반환된 문자열 "★★★★★"를 출력
         /* String stars = Visualizer.getStars(5);
+        stars.getStars(5);
         System.out.println(stars); */
-/*
+
         // [8]
-        ParkingLot parking = new ParkingLot(); // 객체생성
+        ParkingLot parkingLot = new ParkingLot(); // 객체생성
+        int result1 = parkingLot.calculateFee(65); // <-- '65'가 minutes 매개변수로 전달됩니다.
+        int result2 = parkingLot.calculateFee(140); // <-- '140'이 minutes 매개변수로 전달됩니다.
+        System.out.println( result1 );
+        System.out.println( result2 );
 
-        int feeFor65Minutes = parkingLot.calculateFee(65); // <-- '65'가 minutes 매개변수로 전달됩니다.
-        int feeFor140Minutes = parkingLot.calculateFee(140); // <-- '140'이 minutes 매개변수로 전달됩니다.
 
 
 
 
-*/
 
 
 
