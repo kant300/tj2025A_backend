@@ -54,25 +54,47 @@ package day08;
 
 public class 실습9 {
     public static void main(String[] args) {
-        // [1]
+        // [1] Book 클래스
+        Book book1 = new Book("이것이 자바다", "신용권", 30000);
+        Book book2 = new Book("자바의 정석", "남궁성", 28000);
+        //Book book3 = new Book(); // 오류발생 : 존재하지 않는 생성자
+        System.out.printf(" %s \t %s \t %d \n " ,
+                book1.title , book1.author , book1.price );
+        System.out.printf(" %s \t %s \t %d \n " ,
+                book2.title , book2.author , book2.price );
 
-        // [2]
+        // [2] Pet 클래스
+        Pet pet1 = new Pet("초코", "푸들", 3);
+        Pet pet2 = new Pet("나비", "코리안숏헤어", 5);
+        System.out.printf(" %s \t %s \t %d \n " , pet1.name , pet1.species , pet1.age );
+        System.out.printf(" %s \t %s \t %d \n " , pet2.name , pet2.species , pet2.age );
 
-        // [3]
+        // [3] Rectangle 클래스
+        Retangle retangle1 = new Retangle( 10 , 5 );
+        int result3 = retangle1.getArea();
+        System.out.printf(" 넓이 : %d \n " , result3 );
 
-        // [4]
+        // [4] BankAccount 클래스
+        BankAccount account1 = new BankAccount ("111-222-3333", "유재석", 10000);
+        account1.deposit( 5000 );   // 5000원을 입금 , 15000
+        account1.withdraw( 3000 ); // 3000원을 출금 , 12000
+        System.out.println("최종잔액 : " + account1.balance );  // 최종잔액
 
-        // [5]
 
-        // [6]
 
-        // [7]
+        // [5] Goods 클래스
+        Goods goods = new Goods("콜라", 2000);
 
-        // [8]
 
-        // [9]
+        // [6]  Member 클래스
 
-        // [10]
+        // [7] Television 클래스
+
+        // [8] Player 클래스
+
+        // [9] MenuItem 클래스
+
+        // [10] UserProfile 클래스
 
 
 
