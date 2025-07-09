@@ -84,9 +84,11 @@ public class 실습9 {
 
         // [5] Goods 클래스
         Goods goods = new Goods("콜라", 2000);
+        System.out.printf(" %s %d \t" , goods.name , goods.price );
 
 
         // [6]  Member 클래스
+
 
         // [7] Television 클래스
 
