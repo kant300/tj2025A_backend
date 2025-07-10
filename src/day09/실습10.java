@@ -67,13 +67,32 @@ public class 실습10 {
         // circleCalculator.PI = 5.12; // final 수정불가능
 
 
+        // [5] TicketMachine 클래스
+        //(4).TicketMachine 객체 3개(machine1, machine2, machine3)를 생성하세요.
+        System.out.println("--- machine1으로 티켓 2장 발권 ---");
+        TicketMachine machine1 = new TicketMachine();
+        TicketMachine machine2 = new TicketMachine();
+        System.out.println("--- machine2로 티켓 1장 발권 ---");
+        TicketMachine machine3 = new TicketMachine();
+        // (5).machine1으로 티켓 2장, machine2로 티켓 1장을 발권
+        machine1.issueTicket(  ); //machine1으로 티켓 2장
+        machine1.issueTicket(  );
+        machine2.issueTicket(  ); //machine2로 티켓 1장
+        // (5).TicketMachine.printTotalTickets()를 호출하여 총 발권 수가 올바르게 나오는지
+        TicketMachine.printTotalTickets();
 
 
 
-        // [5]
 
 
-        // [6]
+        // [6] GameConfig 클래스
+        //(2) main 함수에서 객체를 생성하지 않고, 모든 설정 값을 출력
+        System.out.println(" 최대 레벨 : " + GameConfig.MAX_LEVEL );
+        System.out.println(" 최대 HP : " + GameConfig.MAX_HP );
+        System.out.println(" 게임 이름 : " + GameConfig.GAME_TITLE );
+
+
+
 
 
 

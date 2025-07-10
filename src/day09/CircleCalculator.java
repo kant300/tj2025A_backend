@@ -3,7 +3,7 @@ package day09;
 public class CircleCalculator {
 // 1. 멤버변수
     static final double PI = 3.14159;
-    int r;
+
 
 // 2. 생성자
 // 3. 메소드
