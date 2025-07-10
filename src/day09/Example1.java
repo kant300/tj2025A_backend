@@ -1,8 +1,7 @@
-/*
 package day09;
 
 
-import day09.package1.A;
+import day09.package1.A;   //A뒤에 커서두고 ctrl+스페이스바 누르기
 import day09.package2.C;
 
 public class Example1 {
@@ -28,16 +27,16 @@ public class Example1 {
             2. 주의할점 : 같은 패키지내 같은 클래스명 존재할 수없다.
                         * 다른 패키지내 같은 클래스명으로 존재
             3. 사용법
-                import  : 같은 패키지가 아닌 다른 패키지의 클래스
+                import  : 같은 패키지가 아닌 다른 패키지의 클래스 가져오는 키워드
                     예] import 경로.클래스명;
                     * 자동완성 사용하면 자동 import 가능하다.
-                    * 단] java.lang 패키지 와 는 예외/생략가능
+                    * 단] java.lang 패키지 는 예외/생략가능
                         -> System클래스 , String클래스 등등
         [ getter and setter ]
-        1. 정의 : 클래스내 privater 멤버변수를 다른 클래스가 사용할
+        1. 정의 : 클래스내 privater 멤버변수를 다른 클래스가 사용할 수 있도록 정의함수
         2. 관례적으로
-            저장/대입 목적 :
-            public set멤버변수( 타입 매개변수 ) {
+            저장/대입 목적 : setter
+            public void set멤버변수( 타입 매개변수 ) {
                 this.멤버변수명 = 매개변수;
             }
             2-2. 호출/반환 목적 : getter
@@ -46,19 +45,18 @@ public class Example1 {
                 }
 
          */
-/*
+
         // [1] 하위 package1 폴더내 A클래스 접근
         A a = new A();
         System.out.println( a.공개변수 );   // 가능!!!
-        System.out.println( a.비공개변수 );  // 오류발생 : 해당 클래스 에서만 가능
-        System.out.println( a.일반변수 );   // 오류발생 : 같은 패키지 에서만 가능
+        //System.out.println( a.비공개변수 );  // 오류발생 : 해당 클래스 에서만 가능
+        //System.out.println( a.일반변수 );   // 오류발생 : 같은 패키지 에서만 가능
 
         // [2] 하위 package2 폴더내 C클래스 접근
         C c = new C();
         //System.out.println( c.비공개변수 );  // 오류발생
-        System.out.println( c.반화메소드( 1234 ) );    // 가능
+        System.out.println( c.반환메소드(  ) );    // 가능
         // c.저장메소드( 3); // 오류발생
 
     }// main e
 }   // class e
-*/
