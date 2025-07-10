@@ -1,10 +1,5 @@
 package 종합.과제3;
 
-// step1 : 반복적인 메인(화면)출력
-// step2 : 입력선택에 따른 화면 출력
-// step3 : 기능별 필요한 메모리 설계
-// step4 : 각 기능별 세부 코드 구현
-
 import java.util.Scanner;
 
 public class WaitingService {
