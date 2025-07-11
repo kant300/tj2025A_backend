@@ -28,6 +28,9 @@ public class BoardDao {
 
     // 2. 조회처리 메소드 : controller 로 부터 모든 db(배열)을 반환한다.
         //  매개변수 : X , 반환값 : boardDto[]
+    public BoardDto[] boardPrint(){
+        return boardDB;
+    }
 
 
 }
