@@ -7,3 +7,5 @@ public class AppStart {
         WaitingView.getInstance().index();
     }
 }// class e
+
+
