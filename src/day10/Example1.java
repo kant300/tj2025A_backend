@@ -1,0 +1,22 @@
+package day10;
+
+import day09.package2.C;
+
+// 1. 싱글톤 만들기
+class Controller{
+    // 1. 기본생성자를 private 한다 , <외부에서 new 사용금지>
+    private Controller(){}
+    // 2. private static final 이용한 인스턴스를 하나 만든다.<싱글톤>
+    private static final Controller controller = new Controller();
+    // 3. private static 이용한 인스턴스 getter 메소드 만든다.<싱글톤 반환>
+    public static Controller getInstance() {
+        return controller; // 싱글톤을 갖는 변수를 반환
+    }// func e
+
+}// class e
+public class Example1 {
+    public static void main(String[] args) {
+        // 4. 싱글톤 불러오기
+        Controller.getInstance(); // == new Controller();를 하나만 만들고 사용하려면 getInstance()로 사용해라.
+    }//main e
+}// class e
