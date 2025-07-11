@@ -69,17 +69,15 @@ public class 실습10 {
 
         // [5] TicketMachine 클래스
         //(4).TicketMachine 객체 3개(machine1, machine2, machine3)를 생성하세요.
-        System.out.println("--- machine1으로 티켓 2장 발권 ---");
-        TicketMachine machine1 = new TicketMachine();
+        TicketMachine machine1 = new TicketMachine(); // 인스턴스(객체)생성
         TicketMachine machine2 = new TicketMachine();
-        System.out.println("--- machine2로 티켓 1장 발권 ---");
         TicketMachine machine3 = new TicketMachine();
         // (5).machine1으로 티켓 2장, machine2로 티켓 1장을 발권
         machine1.issueTicket(  ); //machine1으로 티켓 2장
-        machine1.issueTicket(  );
+        machine1.issueTicket(  ); // 변수명.메소드명() : 인스턴스(객체) 메소드 호출
         machine2.issueTicket(  ); //machine2로 티켓 1장
         // (5).TicketMachine.printTotalTickets()를 호출하여 총 발권 수가 올바르게 나오는지
-        TicketMachine.printTotalTickets();
+        TicketMachine.printTotalTickets(); // 클래스명.static메소드 : 정적메소드 호출
 
 
 
