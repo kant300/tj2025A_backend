@@ -1,16 +1,16 @@
 package 종합.과제5.model.dto;
 
 public class WaitingDto {
-    // 1. 멤버변수 : 설계기반으로 구성한 속성
+    // (5) 멤버변수 : 설계기반으로 구성한 속성
     private String phone;
     private int count;
-    // 2. 생성자
+    // (6) 기본 생성자, 전체생성자 자동생성
     public WaitingDto() {}
     public WaitingDto( String phone , int count ) {
         this.phone = phone;
         this.count = count;
     }
-    // 3. 메소드
+    // (7) 메소드 자동생성
 
     public String getPhone() {
         return phone;
