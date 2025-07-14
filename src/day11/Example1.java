@@ -1,3 +1,5 @@
+package day11;
+
 import java.util.ArrayList;
 
 public class Example1 {
@@ -69,16 +71,46 @@ public class Example1 {
         System.out.println( 리스트객체 );
 
         // [8] 리스트객체와 반복문 관계
-            // (1) 일반 반복문
+        // (1) 일반 반복문
         for( int i = 0 ; i < 리스트객체.size() ; i++ ) {
             String str = 리스트객체.get(i); //i번째 인덱스 요소를 하나씩 순회
             System.out.println( str );
         }
-            // (2) 향샹된 반복문  , for( 항목타입 변수명 : 리스트명 ) { }
+        // (2) 향샹된 반복문  , for( 항목타입 변수명 : 리스트명 ) { }
         for ( String str : 리스트객체 ) { //리스트(목록) 내 요소값 하나씩 str 에 대입 반복
             System.out.println( str );
         }
 
+        // [9] String 이 아닌 내가 만든 클래스(Member) 타입
+        // 3개의 Member객체 생성
+        Member m1 = new Member( "강호동" , 10 );
+        Member m2 = new Member( "신동엽" , 20 );
+        Member m3 = new Member( "유재석" , 30 );
+        // 2) <Member> 타입/클래스의 객체 3개를 지정할 ArrayList 객체 생성
+        ArrayList<Member> memberList = new ArrayList<>(); // < 꺽은괄호에는 리스트/목록 내 저장할 항목의 타입
+        // 3) 리스트에 객체들을 저장하기
+        memberList.add( m1 );
+        memberList.add( m2 );
+        memberList.add( m3 );
+        // 4) 리스트내 요소(객체)들을 순회(하나씩 조회)하기
+        for( int i = 0; i < memberList.size() ; i++ ) {
+            Member m = memberList.get(i);   //[i] --> .get(i)
+            System.out.println("이름 : " + m.name );
+            System.out.println("나이 : " + m.age);
+        }
+
+
 
     }//main e
 } //class e
+
+class Member{
+    String name;    //이름
+    int age;        //나이
+    // -> 오른쪽 클릭 -> [생성] -> [생성자] -> [모든속성 복수선택]
+
+    public Member(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
