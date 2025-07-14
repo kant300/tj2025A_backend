@@ -41,7 +41,10 @@ package day11;
 2. 수정 후의 리스트 전체를 출력하여 결과가 올바른지 확인하세요.
  */
 
+import day09.package1.A;
+
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class 실습11 {
     public static void main(String[] args) {
@@ -85,12 +88,47 @@ public class 실습11 {
         System.out.println( list5 );
 
         // [6] book 객체를 여러개 저장할 타입 <booK>
-        //ArrayList< Book > libray = new ArrayList<>();
-        //Book book1 = new Book
+        ArrayList< Book > libray = new ArrayList<>();
+        Book book1 = new Book( "제목1" , "저자1" );
+        Book book2 = new Book( "제목2" , "저자2" );
+        Book book3 = new Book( "제목3" , "저자3" );
+        libray.add( book1 );
+        libray.add( book2 );
+        libray.add( book3 );
+        for( Book book : libray ) {
+            System.out.println( book ); // [ 확인용 ]
+            System.out.println( "제목 : " + book.getTitle() );
+            System.out.println( "저자 : " + book.getAuthor() );
+        }
 
-        // [7]
 
+        // [7]Scanner를 사용
+        Scanner scan = new Scanner( System.in );
+        ArrayList < String > stringList = new ArrayList<>();
+        for( ; ; ) { // 계속 입력받는다.
+            System.out.println(" 문자를 입력하세요 : ");
+            String inputstr = scan.nextLine();
+            if( inputstr.equals("종료") ) { // "종료가 입력되면
+                break;  // 종료
+            }
+            stringList.add(inputstr); // "종료"가 아니면 리스트에 추가
+        } // for e
+        // ArrayList에 저장된 모든 문자열 출력
+        for ( int i = 0; i < stringList.size() ; i++ ) {
+            String inputstr = stringList.get ( i );
+            System.out.println( inputstr );
+
+        }
         // [8]
+        ArrayList < String > subject = new ArrayList<>();
+        subject.add( "국어" );
+        subject.add( "수학" );
+        subject.add( "사회" );
+        subject.add( "과학" );
+        System.out.println( subject );
+        subject.set( 1 , "영어" );
+        System.out.println( subject );
+
 
 
 
