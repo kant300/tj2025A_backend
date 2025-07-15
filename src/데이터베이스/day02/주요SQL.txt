@@ -39,3 +39,25 @@
         longtext *      문자열표현    최대 42억개 글자 , 4GB , 대용량
     5. 논리
         bool            논리표현      true 혹은 false , tinyint와 같다.
+
+[ 제약조건 ] : 테이블내 속성의 제약조건
+    1. not null        : 해당 속성에 null 값을 저장하지 않는다.
+    2. unique          : 해당 속성에 중복값을 허용하지 않는다.(중복방지)
+    3. default 기본값    : 해당 속성에 값 생략시 기본값
+        default 0       : 해당 속성에 값 생략되면 0 초기화
+        default now( )  : 해당 속성에 값이 생략되면 현재 날짜/시간 초기화
+    4. auto_increment   : (MYSQL) 해당 속성에 순서대로 자동번호 초기화 ( primary key )
+    5. primary key      : 기본/식별키(PK) , 식별 가능한 고유값 필드 키
+        -> 학번, 사번, 주민등록번호, 주문번호, 제품번호, 게시물번호, 예약번호 등
+        -> 절대적으로 중복이 없는 고유값!!!!
+        특징) not null , unique 포함됨.
+        선언) constraint primary key( 필드명 )
+    6. foreign key      : 참조/외래키(FK) , 다른 테이블의 기본키(PK)를 참조하는 키
+        -> 수강신청학번 , 출근한직원사번 , 글작성자회원번호 등등
+        특징) FK필드는 NULL과 중복이 가능하다. PK값 참조한다.
+        선언) constraint foreign key( FK필드명 ) references 참조할테이블명( PK필드명 );
+        주의할 점 : FK속성과
+
+
+
+
