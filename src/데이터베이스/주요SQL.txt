@@ -4,8 +4,9 @@
 [ SQL ]
     [0] 메타데이터 관리어
         1. show
-            1) show databases;          DB서버내 전체 데이터벵스 목록조회
+            1) show databases;                  : DB서버내 전체 데이터벵스 목록조회
             2) show variables like 'datadir';   : DB서버내 LOCAL PATH 조회
+            3) show tables;                     : *활성화*중인 데이터베이스내 모든 테이블 조회
         2. use
             1) use 데이터베이스명;                 : DB서버내 지정한 데이터베이스 활성화(사용)
     [1] 데이터베이스 정의 : DDL
@@ -48,15 +49,19 @@
         default now( )  : 해당 속성에 값이 생략되면 현재 날짜/시간 초기화
     4. auto_increment   : (MYSQL) 해당 속성에 순서대로 자동번호 초기화 ( primary key )
     5. primary key      : 기본/식별키(PK) , 식별 가능한 고유값 필드 키
-        -> 학번, 사번, 주민등록번호, 주문번호, 제품번호, 게시물번호, 예약번호 등
+        -> 학번, 사번, 주민등록번호, mno , 주문번호, 제품번호, 게시물번호, 예약번호 등
         -> 절대적으로 중복이 없는 고유값!!!!
         특징) not null , unique 포함됨.
         선언) constraint primary key( 필드명 )
     6. foreign key      : 참조/외래키(FK) , 다른 테이블의 기본키(PK)를 참조하는 키
-        -> 수강신청학번 , 출근한직원사번 , 글작성자회원번호 등등
+        -> 수강신청학번 , 출근한직원사번 , mno , 글작성자회원번호 등등
         특징) FK필드는 NULL과 중복이 가능하다. PK값 참조한다.
         선언) constraint foreign key( FK필드명 ) references 참조할테이블명( PK필드명 );
-        주의할 점 : FK속성과
+        주의할 점)
+            1. FK속성타입과 PK속성타입 일치한다.
+            2. 관례적으로 pk속성명과 fk속성명을 동일하게 한다.
+[ 생성된 테이블 다이어그램 확인 ] : 여럿 테이블 간의 관계 확인
+# workbench 상단메뉴 -> [database] -> [reverse engineer] -> stored connection : local ->
 
 
 
