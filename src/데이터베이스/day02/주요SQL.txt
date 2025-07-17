@@ -58,7 +58,7 @@
         선언) constraint foreign key( FK필드명 ) references 참조할테이블명( PK필드명 );
         주의할 점 : FK속성과
 
-법률상담시간 15분간 질문하는 방법
+
 
 
 

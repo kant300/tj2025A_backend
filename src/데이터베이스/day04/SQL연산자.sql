@@ -63,15 +63,14 @@ select mid as 회원아이디 , mname 회원명 from member;	-- as는 생략가�
 select mid 회원아이디 from member as m;	-- member 테이블명을 'm'으로 별칭하다.
 select mid 회원아이디 from member m;
 
-# [2] distinct , 속성값이 중복인 레코드 제거
+# [2] distinct 속성명, 속성값이 중복인 레코드 제거
 select maddr as 주소 from member;		-- 조회 결과 속성 값들의 중복이 존재
-select distinct maddr as 주소 from member	;	-- 중복이 제거
+select distinct maddr as 주소 from member	;	-- 속성값들의 중복제거
 
-# [3] 산술연산자 , +더하기 , -빼기 , *곱하기 , /나누기 , div몫 , mod나머지
-select
-	mnumber + 3 as 더하기 , mnumber - 3 as 빼기 , mnumber * 3 as 곱하기 ,
-	mnumber / 3 as 나누기 , mnumber div 3 as 몫 , mnumber mod 3 as 나머지 
-from member;
+# [3] 산술연산자 , +더하기 , -빼기 , *곱하기 , /나누기 , div 몫 , mod 나머지
+select	mnumber as 인원수 , mnumber + 3 as 더하기 , mnumber - 3 as 빼기 ,
+        mnumber * 3 as 곱하기 , mnumber / 3 as 나누기 , mnumber div 3 as 몫 , 
+        mnumber mod 3 as 나머지 from member;
 
 # [4] 
 # 비교연산자 : > 초과 < 미만 >=이상 <=이하 =같다 !=같지않다
@@ -92,8 +91,8 @@ select * from member where mphone1 = null;	-- 속성값이 null이면 [x 불가�
 select * from member where mphone1 is null;		-- 속성값이 null이면 [ O 가능 ]
 select * from member where mphone1 is not null;	-- 속성값이 null이 아니면
 # null 연산자 : 속성명 is null , 속성명 is not null;
-select * from member where mname like '에이%';		-- 속성값이 '에이'로 시작하는
-select * from member where mname like '에이_';	-- 속성값이 '에이'로 시작하는 세글자
+select * from member where mname like '에이%';		-- 속성값이 '에이'로 시작하는 	, 에이X 에이XX 에이XXX ~
+select * from member where mname like '에이_';	-- 속성값이 '에이'로 시작하는 세글자 , 에이X
 select * from member where mname like '%핑크';	-- 속성값이 '핑크'로 끝나는 , x핑크 , xx핑크 , xxx핑크 등등
 select * from member where mname like '%이%'; 	-- 속성값에 '이'가 포함된
 select * from member where mname like '_이_';	-- 속성값의 두번째 글자가 '이'인 세글자
