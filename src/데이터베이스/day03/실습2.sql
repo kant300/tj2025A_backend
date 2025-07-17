@@ -41,18 +41,19 @@ category: '컴퓨터 주변기기'
 
 */
 # [1]
-drop database if exists members;
-create database members;
-use members;
-drop members members;
-drop database if exists members;
-create database 실습2;
-use 실습2;
-create table members( member_id varchar(20) not null primary key , -- 회원아이디
-member_name varchar(50) not null, -- 회원 이름
-email varchar(100) not null unique, --  이메일
-join_date datetime default now(),-- 가입일
-points int default 0  -- 포인트
+drop database if exists 실습2; -- 데이터베이스 생성하기 전에 삭제
+create database 실습2;	-- 데이터베이스 생성
+use 실습2;	-- 데이터베이스 선택 사용(활성화)
+
+# 파랑색의 텍스트는 키워드/문법 , 검정색 텍스트는 
+-- 테이블 생성, create table 테이블명( 속성명 타입 제약조건 , 속성명 타입 제약조건 );
+create table members( 
+	member_id varchar(20) not null ,
+	constraint primary key( member_id ) , -- 회원아이디
+	member_name varchar(50) not null, -- 회원 이름
+	email varchar(100) not null unique, --  이메일
+	join_date datetime default now(),-- 가입일
+	points int default 0  -- 포인트
 );
 # [2]
 insert

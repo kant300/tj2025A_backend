@@ -4,9 +4,8 @@
 [ SQL ]
     [0] 메타데이터 관리어
         1. show
-            1) show databases;                  : DB서버내 전체 데이터벵스 목록조회
+            1) show databases;          DB서버내 전체 데이터벵스 목록조회
             2) show variables like 'datadir';   : DB서버내 LOCAL PATH 조회
-            3) show tables;                     : *활성화*중인 데이터베이스내 모든 테이블 조회
         2. use
             1) use 데이터베이스명;                 : DB서버내 지정한 데이터베이스 활성화(사용)
     [1] 데이터베이스 정의 : DDL
@@ -15,38 +14,6 @@
         2. drop
             1) drop database 데이터베이스명;       : 지정한 데이터베이스 삭제
             2) drop database if exists 데이터베이스명; : 만약에 지정한 데이터베이스 존재하면 삭제
-
-  ** [2] 데이터베이스 조작어 : DML , 키워드/문법에 대한 대소문자 구분 없다.
-        1. INSERT
-            1) 특정속성에 값 대입하여 레코드 추가
-                insert into 테이블명( 속성명1, 속성명2 ) values( 값1 , 값2 );
-            2) 모든 속성에 값 대입하여 레코드 추가, 속성명 생략 가능
-                insert into 테이블명 values( 값1, 값2 );
-            3) 하나의 insert 로 여러개 레코드 추가
-                insert into 속성명
-        2. SELECT
-            1) 전체 속성에 레코드 조회 , *(와일드카드)
-                select * from 테이블명;
-            2) 특정 속성에 레코드 조회
-                select 속성명1 , 속성명2 from 테이블명;
-            3) 특정 속성 조건에 따른 레코드 조회
-                select * from 테이블명 where [조건절];
-        3. UPDATE
-            1) 전체 레코드의 속성값 수정
-                update 테이블명 set 속성명 = 새로운값;
-            2) 특정 속성 조건에 따른 레코드의 속성값 수정
-                update 테이블명 set 속성명 = 새로운값 where [조건절];
-            3) 다수 속성값 수정
-                update 테이블명 set 속성명 = 새로운값 , 속성명 = 새로운값 where [조건절];
-        4.DELETE
-            1) 전체 레코드 삭제
-                delete from 테이블명;
-            2) 특정 속성 조건에 따른 레코드 삭제
-                delete from 테이블명 where [조건절]; **
-
-    * mysqlWorkbench safeMode : pc마다 첫 설치 이후 safeMode 켜져 있음.
-    -> 수정/삭제시 safeMode 끄기 : set SQL_SAFE_UPDATES = 0
-
 [ 데이터타입 ] : 테이블내 속성들이 갖는/저장하는 자료들의 분류/타입/종류
     1. 정수
         tinyint         1byte   -128 ~ +127
@@ -81,19 +48,17 @@
         default now( )  : 해당 속성에 값이 생략되면 현재 날짜/시간 초기화
     4. auto_increment   : (MYSQL) 해당 속성에 순서대로 자동번호 초기화 ( primary key )
     5. primary key      : 기본/식별키(PK) , 식별 가능한 고유값 필드 키
-        -> 학번, 사번, 주민등록번호, mno , 주문번호, 제품번호, 게시물번호, 예약번호 등
+        -> 학번, 사번, 주민등록번호, 주문번호, 제품번호, 게시물번호, 예약번호 등
         -> 절대적으로 중복이 없는 고유값!!!!
         특징) not null , unique 포함됨.
         선언) constraint primary key( 필드명 )
     6. foreign key      : 참조/외래키(FK) , 다른 테이블의 기본키(PK)를 참조하는 키
-        -> 수강신청학번 , 출근한직원사번 , mno , 글작성자회원번호 등등
+        -> 수강신청학번 , 출근한직원사번 , 글작성자회원번호 등등
         특징) FK필드는 NULL과 중복이 가능하다. PK값 참조한다.
         선언) constraint foreign key( FK필드명 ) references 참조할테이블명( PK필드명 );
-        주의할 점)
-            1. FK속성타입과 PK속성타입 일치한다.
-            2. 관례적으로 pk속성명과 fk속성명을 동일하게 한다.
-[ 생성된 테이블 다이어그램 확인 ] : 여럿 테이블 간의 관계 확인
-# workbench 상단메뉴 -> [database] -> [reverse engineer] -> stored connection : local ->
+        주의할 점 : FK속성과
+
+법률상담시간 15분간 질문하는 방법
 
 
 
