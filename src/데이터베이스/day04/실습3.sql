@@ -112,9 +112,23 @@ select title , author from books where title like '%자%';
 select * from books where genre not in ( '소설' , '역사' );
 
 -- [문제 14] books 테이블에서 장르가 '컴퓨터'이고 가격이 20000원 미만이며, 재고가 20권 이상인 도서의 title을 조회하세요.
+select title from books where genre = '컴퓨터' and price < 20000  and stock >= 20;
+
 -- [문제 15] books 테이블의 모든 도서 정보를 장르(genre)의 가나다순(오름차순)으로 정렬하되, 같은 장르 내에서는 가격(price)이 비싼 순(내림차순)으로 정렬하세요.
--- [문제 16] books 테이블에서 저자명(author)이 '이'씨가 아닌 도서의 title과 author를 조회하세요.
+# order by 속성명 asc/desc , 속성명 asc/desc ;
+select * from books order by genre asc , price desc;
+
+-- [문제 16] books 테이블에서 저자명(author)이 '이'씨가 *아닌* 도서의 title과 author를 조회하세요.
+select title , author from books where author not like '이%';
+
 -- [문제 17] books 테이블에서 재고(stock) 정보가 있는(NULL이 아닌) 도서의 title과 stock을 조회하세요.
--- [문제 18] books 테이블에서 출판일(pub_date)이 가장 최신인 도서부터 4번째에서 6번째까지의 도서 3개의 title과 pub_date를 조회하세요. (LIMIT 오프셋 사용)
--- [문제 19] books 테이블에서 저자가 '김호연'이거나 장르가 '과학'인 도서의 모든 정보를 조회하세요.
+select title , stock from books where stock is not null;
+
+-- [문제 18] books 테이블에서 출판일(pub_date)이 *가장 최신*인 도서부터 *4번째에서 6번째까지의 도서 3개*의 title과 pub_date를 조회하세요. (LIMIT 오프셋 사용)
+select title , pub_date from books order by pub_date desc limit 4 , 3 ;
+
+-- [문제 19] books 테이블에서 저자가 '김호연'*이거나* 장르가 '과학'인 도서의 모든 정보를 조회하세요.
+select * from books where author = '김호연' or genre = '과학';
+
 -- [문제 20] books 테이블에서 도서명(title)이 '점'으로 끝나는 도서의 title과 genre를 조회하세요.
+select title , genre from books where title like '%점';
