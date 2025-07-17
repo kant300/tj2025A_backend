@@ -1,7 +1,10 @@
 [ 데이터베이스 ] : 데이터/자료들의 집합/모입
 [ 관계형데이터베이스 ] : 자료들 간의 종속되는 관계 표현 가능한 데이터베이스
-[ 테이블 ]
+[ 테이블 ] : 행과 열로 이루어진 데이터의 형식 = 표
 [ SQL ]
+    - 주의할점
+    1) SQL 대소문자를 구분하지 않는다.
+    2) SQL 명령어 문장 끝에(;) 세미콜론 단위로 실행한다.
     [0] 메타데이터 관리어
         1. show
             1) show databases;                  : DB서버내 전체 데이터벵스 목록조회
@@ -9,23 +12,30 @@
             3) show tables;                     : *활성화*중인 데이터베이스내 모든 테이블 조회
         2. use
             1) use 데이터베이스명;                 : DB서버내 지정한 데이터베이스 활성화(사용)
-    [1] 데이터베이스 정의 : DDL
+    [1] 데이터베이스 정의 : DDL Data Definition Language
         1. create
             1) create database 데이터베이스명;     : 지정한 데이터베이스 생성
+            2) create table 테이블명(             : 지정한 테이블 생성
+                속성명1 타입 제약조건,
+                속성명2 타입 제약조건
+                );
         2. drop
             1) drop database 데이터베이스명;       : 지정한 데이터베이스 삭제
             2) drop database if exists 데이터베이스명; : 만약에 지정한 데이터베이스 존재하면 삭제
+            3) drop table 테이블명;                 : 지정한 테이블 삭제
+            4) drop table if exists 테이블명;       : 만약에 지정한 테이블 존재하면 삭제
 
-  ** [2] 데이터베이스 조작어 : DML , 키워드/문법에 대한 대소문자 구분 없다.
+  ** [2] 데이터베이스 조작어 : DML Data Manipulation Language , 키워드/문법에 대한 대소문자 구분 없다.
         1. INSERT
             1) 특정속성에 값 대입하여 레코드 추가
                 insert into 테이블명( 속성명1, 속성명2 ) values( 값1 , 값2 );
             2) 모든 속성에 값 대입하여 레코드 추가, 속성명 생략 가능
                 insert into 테이블명 values( 값1, 값2 );
             3) 하나의 insert 로 여러개 레코드 추가
-                insert into 속성명
+                insert into 테이블명 values ( 값1 , 값2 ) , ( 값1 , 값2 ) , ( 값1 , 값2 );
+            - 주의할점 : 각 속성의 제약조건에 따라 적절하게 값 대입
         2. SELECT
-            1) 전체 속성에 레코드 조회 , *(와일드카드)
+            1) 전체 속성에 레코드 조회 , *(와일드카드 Wildcard) : 모든 컬럼/열 을 의미하는 와일드카드
                 select * from 테이블명;
             2) 특정 속성에 레코드 조회
                 select 속성명1 , 속성명2 from 테이블명;
@@ -79,12 +89,13 @@
     3. default 기본값    : 해당 속성에 값 생략시 기본값
         default 0       : 해당 속성에 값 생략되면 0 초기화
         default now( )  : 해당 속성에 값이 생략되면 현재 날짜/시간 초기화
-    4. auto_increment   : (MYSQL) 해당 속성에 순서대로 자동번호 초기화 ( primary key )
+    4. auto_increment   : (MYSQL) 해당 속성에 순서대로 자동번호 초기화 ( + primary key )
     5. primary key      : 기본/식별키(PK) , 식별 가능한 고유값 필드 키
         -> 학번, 사번, 주민등록번호, mno , 주문번호, 제품번호, 게시물번호, 예약번호 등
         -> 절대적으로 중복이 없는 고유값!!!!
         특징) not null , unique 포함됨.
-        선언) constraint primary key( 필드명 )
+        선언) constraint primary key( PK필드명 )
+
     6. foreign key      : 참조/외래키(FK) , 다른 테이블의 기본키(PK)를 참조하는 키
         -> 수강신청학번 , 출근한직원사번 , mno , 글작성자회원번호 등등
         특징) FK필드는 NULL과 중복이 가능하다. PK값 참조한다.
@@ -93,7 +104,8 @@
             1. FK속성타입과 PK속성타입 일치한다.
             2. 관례적으로 pk속성명과 fk속성명을 동일하게 한다.
 [ 생성된 테이블 다이어그램 확인 ] : 여럿 테이블 간의 관계 확인
-# workbench 상단메뉴 -> [database] -> [reverse engineer] -> stored connection : local ->
+# workbench 상단메뉴 -> [database] -> [reverse engineer] -> stored connection : local(선택) -> [next]
+# -> 비밀번호입력 [next] -> 데이터베이스 선택 -> [next] -> [finish]
 
 
 
