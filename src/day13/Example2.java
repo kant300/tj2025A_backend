@@ -1,17 +1,22 @@
+
 package day13;
 
 // * 자바의 모든 클래스는 자동으로 extends Object 이므로 자바는 100% 객체지향이다.
-class A {   //class A extends Object{
-    A() {
-        System.out.println("A 객체 탄생");
-    } //A클래스 생성자
-}
+class A {   //class A extends Object{   // 부모 : Object , 자식 : B/C , 자손 : D/E
+    A() { System.out.println("A 객체 탄생"); } //A클래스 생성자
+}// class e
 
-class B extends A {// B는 A로부터 상속받았다.
-
-    B() {
-        System.out.println("B 객체 탄생");
-    }
+class B extends A {// B는 A로부터 상속받는다. // 부모 : A , 자식 : D
+    B() { System.out.println("B 객체 탄생"); }
+}// class e
+class C extends A { // C는 A로부터 상속받는다. // 부모 : A , 자식: E
+    C(){  System.out.println("C 객체 탄생");  }
+}// class e
+class D extends B { // D는 B로부터 상속받는다 // 부모 : B
+    D(){ System.out.println("D 객체 탄생"); }
+}// class e
+class E extends C {  // E는 C로부터 상속받는다. // 부모 : C
+    E(){ System.out.println("E 객체 탄생"); }
 }
 
 
@@ -20,10 +25,10 @@ public class Example2 {
 
         // (1) A클래스로 객체 생성시 총 객체수 : 2개
         System.out.println("==================");
-        A a = new A();  // A , Object
+        A a = new A();  // A , Object //Object -> A
 
         System.out.println("==================");
-        // (2) B클래스로 객체 생성시 총 객체수 : 2개
+        // (2) B클래스로 객체 생성시 총 객체수 : 3개
         B b = new B(); // B, A , Object : Object -> A -> B
 
         System.out.println("==================");
@@ -44,7 +49,7 @@ public class Example2 {
         // B b2 = c;    // 불가능
 
         // (7) 강제타입변환
-        B b2 = a1; // 가능! a1태생확인
+        B b2 = (B)a1; // 가능! a1태생확인
 
         A a2 = e;   // 자동
         C c1 = (C) a2; // C c1 = a2; 강제
@@ -61,8 +66,8 @@ public class Example2 {
         System.out.println(a2 instanceof B); //false
 
         // (9) 상속 활용처
-        // 1. 웹/앱 라이브러리
-        // 2. 클래스 설계 단계
+        // 1. 웹/앱 라이브러리 *
+        // 2. 클래스 설계 단계 ( 경험이 많아야 한다.)
         //      코드치다가 명령어(코드)가 중복되면 메소드화
         //      클래스정의하다가 다른클래스와 멤버변수 중복되면 상속화
         // 클린코딩
