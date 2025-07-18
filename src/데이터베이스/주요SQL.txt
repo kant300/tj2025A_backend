@@ -122,8 +122,9 @@
         select 속성명 from 테이블명 where (논리)
     4. 기타연산자
         (1) select 속성명 from 테이블명 where 속성명 between 시작값 and 끝값
-        (2)
+        (2) select 속성명 from 테이블명 where 속성명 in( 값1 , 값2 )
     5. null연산자
+        (1) select 속성명 f
 
     6. 문자패턴
         (1) 속성명 like '%'        : 모든문자대응, 문자수제한없음

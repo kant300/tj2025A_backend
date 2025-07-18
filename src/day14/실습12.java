@@ -12,7 +12,8 @@ class Person{ // Person 클래스
 }
 class Student extends Person{ //Person 클래스를 상속받는 Student 클래스
     int studentId; //studentId(정수) 멤버 변수
-    Student() { System.out.println("[Student  인스턴스생성]"); }
+    Student()
+    { System.out.println("[Student  인스턴스생성]"); }
     void showValue2() { System.out.println(">>Student 메소드 실행<<"); }
 
 }
