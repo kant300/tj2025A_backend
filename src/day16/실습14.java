@@ -37,16 +37,27 @@ public class 실습14 {
         finally { System.out.println("데이터베이스 연결을 종료합니다."); }
 
         // [6]
-            try{
-                String text = null;
-                System.out.println( text.length() );
-                int result = 5 / 0;  // ArithmeticException: / by zero
-                System.out.println( result );
-            }catch ( NullPointerException e ) {
-                System.out.println("객체가 초기화되지 않았습니다." + e );
-            }catch ( ArithmeticException e ) {
-                System.out.println("0으로 나눌 수 없습니다." + e );
-            }
+        try {
+            String text = null;
+            System.out.println(text.length()); // java.lang.NullPointerException: Cannot invoke "String.length()" because "text" is null
+            int result = 5 / 0;
+            System.out.println(result);
+        } catch (NullPointerException e) {
+            System.out.println("객체가 초기화되지 않았습니다." + e);
+        } catch (ArithmeticException e) {
+            System.out.println("0으로 나눌 수 없습니다." + e);
+        }
+        // [7]
+
+
+        // [8]
+        try{
+            int[] arr = new int[2];
+            System.out.println(arr[5]); // ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 2
+        }catch ( Exception e ) {
+            System.out.println("알 수 없는 오류가 발생했습니다." + e );
+        }finally { System.out.println( "예외가 있든 없든 무조건 실행코드" ); }
+
 
 
 
