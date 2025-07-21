@@ -168,7 +168,9 @@ public class 실습12 {
 
         // [2] 메소드 오버라이딩 (Method Overriding)
         Cat cat = new Cat(); // Cat 객체를 생성
-        cat.makeSound();// makeSound() 메소드를 호출
+        cat.makeSound();// makeSound() 메소드를 호출 // 고양이가 야옹하고 웁니다.
+        Animal animal = new Cat();  animal.makeSound();// 고양이가 야옹하고 웁니다.
+        Animal animal1 = new Animal(); animal1.makeSound(); // 동물이 소리를 냅니다.
 
         // [3]  생성자 호출 순서
         Computer computer = new Computer(); // 객체생성
