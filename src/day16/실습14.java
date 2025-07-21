@@ -33,12 +33,23 @@ public class 실습14 {
         }
 
         // [5] finally
-        try {
+        try { System.out.println( "데이터베이스 연결을 시작합니다."); }
+        finally { System.out.println("데이터베이스 연결을 종료합니다."); }
 
-        }
-        finally {
-            System.out.println("데이터베이스 연결을 종료합니다.");
-        }
+        // [6]
+            try{
+                String text = null;
+                System.out.println( text.length() );
+                int result = 5 / 0;  // ArithmeticException: / by zero
+                System.out.println( result );
+            }catch ( NullPointerException e ) {
+                System.out.println("객체가 초기화되지 않았습니다." + e );
+            }catch ( ArithmeticException e ) {
+                System.out.println("0으로 나눌 수 없습니다." + e );
+            }
+
+
+
 
 
     }// main e
