@@ -11,7 +11,7 @@
 [문제 2] 인터페이스 상수
 1. RemoteControl 인터페이스를 만드세요.
 2. 이 인터페이스 안에, public static final로 최대 볼륨 MAX_VOLUME = 10과 최소 볼륨 MIN_VOLUME = 0 상수를 정의하세요.
-3. main 함수에서 객체를 생성하지 않고, RemoteControl.MAX_VOLUME과 같이 인터페이스 이름으로 직접 접근하여 두 상수를 출력하세요.
+3. main 함수에서 *객체를 생성하지 않고/ new사용하지 말라는 뜻*, RemoteControl.MAX_VOLUME과 같이 인터페이스 이름으로 직접 접근하여 두 상수를 출력하세요.
 
 [문제 3] 다형성: 인터페이스 타입 변환
 1. "달립니다."라는 추상 메소드 run()을 가진 Runnable 인터페이스를 정의하세요.

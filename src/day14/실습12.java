@@ -2,6 +2,7 @@ package day14;
 
 // [1]
 class Person{ // Person 클래스
+    // 1. 클래스의 멤버 : 멤버변수 = 특징/상태 , 생성자 = 초기화 , 메소드 = 행동/이벤트
     String name; // name(문자열) 멤버 변수
     public Person() {
         System.out.println("[Person 인스턴스생성]");
@@ -23,7 +24,7 @@ class Student extends Person{ // Person 클래스를 상속받는 Student 클래
 
 // [2]
 class Animal{ //  Animal 클래스
-    public void makeSound() { // makeSound() 메소드를 가진
+    public void makeSound() { // makeSound() 메소드를 가진, 오버라이딩조건 : 부모타입의 메소드명이 선언부를 동일하면 된다.
         System.out.println("동물이 소리를 냅니다.");
     }// func e
 }// class e
@@ -159,8 +160,9 @@ public class 실습12 {
     public static void main(String[] args) {
         // [1] 기본 상속
         Student student = new Student(); //  Student 객체를 생성
-        student.name = "윤남노"; //상속받은 name 멤버 변수에 이름저장
-        student.studentId = 20250717; // 자신의 studentId 멤버 변수에 학번저장
+        // Student student : 변수 , new Student(); 인스턴스/객체 생성
+        student.name = "윤남노"; // 부모의 멤버변수 , 상속받은 name 멤버 변수에 이름저장
+        student.studentId = 20250717; // 본인의 멤버변수 , 자신의 studentId 멤버 변수에 학번저장
         System.out.printf("이름 : %s \n" , student.name );
         System.out.printf("학번 : %d \n" , student.studentId);
 
