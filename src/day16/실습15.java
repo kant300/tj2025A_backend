@@ -88,7 +88,7 @@ public class 실습15 {
         // [8]
         try{
             // (1) 파일 경로 지정
-            String path8 = "인천광역시 부평구_인구 현황_20250131.csv";
+            String path8 = "src/day16/인천광역시 부평구_인구 현황_20250131.csv";
             // (2) 파일 입력 객체 생성
             FileInputStream fin8 = new FileInputStream( path8 );
             // (3) 파일 읽어올 바이트를 파일 크기만 선언
@@ -101,12 +101,12 @@ public class 실습15 {
             System.out.println( str8 );
             // (6) 행 단위로 분리하기, .split("구분문자");
             String[] rows = str8.split("\n");
-            System.out.println(Arrays.toString( rows ) );
+            // System.out.println(Arrays.toString( rows ) ); // ] 출력되고 이줄을 가리면 안나온다.
             // (7) 행 단위 반복
             for( int i = 0; i< rows.length ; i++ ) {
                 System.out.println( rows[i] );
                 String row = rows[i];  // (8) 하나의 행 추출
-                String[] cols = row.split( " , ");  // (9) 하나의 행에서 열 분리하기
+                String[] cols = row.split( ",");  // (9) 하나의 행에서 열 분리하기
                 System.out.printf("동별 : %s , 총 인구 : %s명 \n" , cols[0] , cols[1]); // 첫번재열[0] 두번째열[1]
             }
 
