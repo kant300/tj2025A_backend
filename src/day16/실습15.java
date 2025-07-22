@@ -97,7 +97,7 @@ public class 실습15 {
             // (4) 읽어오기
             fin8.read( bytes8 );
             // (5) 문자열로 변환
-            String str3 = new String( bytes8 , "EUC-KR");
+            String str8 = new String( bytes8 , "EUC-KR");
             System.out.println( str8 );
             // (6) 행 단위로 분리하기, .split("구분문자");
             String[] rows = str8.split("\n");
