@@ -30,7 +30,7 @@ public class BoardDao {
         // BoardDto boardDto : 매개변수
         boardDB.add( boardDto ); // 1. 리스트(DB)에 DTO를 저장한다.
         saveCSV(); // * CSV 저장
-        return true; // 2. 성공시 true 반환한다. true 의 타입은 boolean 타입니다.
+        return true; // 2. 성공시 true 반환한다. true 의 타입은 boolean 타입이다.
     }// func e
     // (2) 전체조회
     public ArrayList<BoardDto> boardPrint() {
@@ -56,7 +56,7 @@ public class BoardDao {
         try{
             FileReader fileReader = new FileReader( path ); // (1) FileReader 이용한 읽기모드 객체 생성
             CSVReader csvReader = new CSVReader( fileReader );  // (2) CSVReader 에 fileReader대입하여 CSV객체 생성
-            List < String[] > inData = csvReader.readAll(); // (3) .readAl() 함수로 모든 CSV정보를 읽어온다.
+            List < String[] > inData = csvReader.readAll(); // (3) .readAll() 함수로 모든 CSV정보를 읽어온다.
             for( String[] row : inData ) { // 향상된 for 문     (4) 반복문  이용한 행 순회
                 String content = row[0];   // 첫번째 열
                 String writer = row[1];    // 두번째 열

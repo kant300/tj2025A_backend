@@ -43,7 +43,7 @@ public class 실습15 {
         }
 
         // [3]
-        File file = new File( path );
+        File file = new File("src/day16/diary.txt" );
         System.out.println( file.exists() );    // 파일 존재 여부 true/false 반환 함수
         System.out.println( file.getPath() );   // 파일 경로 반환 함수
         System.out.println( file.getName() );   // 파일 이름 반환 함수
@@ -84,6 +84,9 @@ public class 실습15 {
             FileOutputStream foutput = new FileOutputStream( path2 , true );
             foutput.write( outStr.getBytes( ) );
         }catch ( Exception e ) { System.out.println( e ); }
+
+        // [5]
+
 
         // [8]
         try{

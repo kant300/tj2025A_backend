@@ -16,7 +16,7 @@ public class BoardView {
     }
     // (*) 입력객체 : 메소드 밖에 선언한이유 --> 여러개 메소드에서 사용하기 위해
     private Scanner scan = new Scanner( System.in );
-    // (*) BoardController 싱글톤 호출 : 컨트롤러 메소드/기능 사용하기 윟
+    // (*) BoardController 싱글톤 호출 : 컨트롤러 메소드/기능 사용하기 위해
     private BoardController boardController = BoardController.getInstance();
     // (*) 메인 뷰
     public void index() {
