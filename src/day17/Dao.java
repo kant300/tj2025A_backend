@@ -1,7 +1,5 @@
 package day17;
 
-import com.mysql.cj.util.DnsSrv;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -34,7 +32,7 @@ public class Dao {
         } catch (ClassNotFoundException e) {
             System.out.println("[경고] mysql 드라이버 로드 실패");
         } catch (SQLException e) {
-            System.out.println("[경고] mysql 드라이버 연동 실패");
+            System.out.println("[경고] 데이터베이스 연동 실패");
         }
     }
 }//class e
