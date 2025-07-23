@@ -5,6 +5,8 @@ import 종합.예제10.model.dto.BoardDto;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class BoardDao {
     // (*)싱글톤
@@ -46,7 +48,71 @@ public class BoardDao {
             return false;   // 1개 이상 insert 못했으면 저장 실패
         }catch ( Exception e ) { System.out.println(e); } //  catch e
         return  false; // 예외 발생시 저장 실패
+    }// func e
+
+    // (2) 전체조회 기능 구현
+    public ArrayList<BoardDto> boardPrint() {
+        // public : 다른 패키지의 Controller가 접근하기 위해 public 다른 패키지 접근 vs private : 현재 클래스만
+        // ArrayList<BoardDto> : *배열* 대신에 다양한 편의성 기능을 제공하는 ArrayList 클래스
+        //  3 = int타입 , 3 5 7 = int int int ---> int[]
+        //  bcontent/bwriter = BoardDto, bcontent/bwriter bcontent/bwriter bcontent/bwriter = BoardDto BoardDto BoardDto
+        //  ---> BoardDto[] ---> ArrayList
+        ArrayList<BoardDto> list = new ArrayList<>(); // 조회된 레코드(DTO) 들을 저장할 리스트 선언
+        try{
+        // 1. SQL 작성
+        String sql = "select * from board";
+        // 2. SQL 기재
+        PreparedStatement ps = conn.prepareStatement(sql);
+        // 3. SQL 매개변수 대입 , SQL 문법에? (매개변수) 가 없어서 생략
+        // 4. SQL 실행 , select = executeQuery()
+        ResultSet rs = ps.executeQuery();
+        // 5. SQL 결과에 따른 로직/리턴/확인
+                // 1) select 조회결과를 레코드/행/가로단위 하나씩 조회
+            while( rs.next() ) { // rs.next() : ResultSet 인터페이스가 갖는 (조회)결과 테이블에서 다음레코드 이동 뜻
+                int bno = rs.getInt( "bno" ); // rs.get타입("가져올속성명 or 번호")
+                String bcontent = rs.getString( "bcontent" );
+                String bwriter = rs.getString( "bwriter" );
+                BoardDto boardDto = new BoardDto( bno , bcontent , bwriter );
+                // 레코드1개(열3걔 --> DTO(멤버변수3개) 1개
+                // 3) 생성된 dto를 리스트에 담아주기
+                list.add( boardDto );
+            }// while e
+        }catch ( Exception e ) { System.out.println(e); }
+        return  list;
     }
+
+    // (3) 삭제 기능 구현
+    public boolean boardDelete( int bno ) { // int bno : 매개변수이면서 삭제할 게시물의 식별(pk)번호
+        try {
+            String sql = "delete from board where bno = ?"; // 1. SQL 작성
+            PreparedStatement ps = conn.prepareStatement(sql); // 2. SQL 기재
+            ps.setInt(1, bno); // SQL 문법내 첫번째 ? 의 INT타입으로 bno 값 대입 // 3. SQL 매개변수 대입
+            // 4. SQL 실행 , insert/update/delete 문법 실행 결과는 처리된 레코드수 반환
+            int count = ps.executeUpdate();
+            // 5. SQL 결과에 따른 로직/리턴/확인
+            if (count == 1) { return true; } // <--- sql결과 1이면 삭제성공
+            else { return false; } // <--- sql결과 1아니면 삭제실패
+        } catch (Exception e) { System.out.println(e); }
+        return false; // <--- 예외발생시 삭제실패
+    }
+
+    // (4) 수정 기능 구현
+    public boolean boardUpdate( BoardDto boardDto ) {
+        try{
+            String sql = "update board set bcontent = ? where bno = ? ";  // 1. SQL 작성
+            PreparedStatement ps = conn.prepareStatement(sql); // 2. SQL 기재
+            // 3. SQL 매개변수 대입, SQL 문법내 ? 개수만큼 대입
+            ps.setString(1 , boardDto.getBcontent() ); // .setString() 사용한 이유 : bcontent 가 문자열이라서
+            ps.setInt(2 , boardDto.getBno() ); // 2 작성한 이유 : SQL 문법내 두번째 ? 자리에 bno 값 대입
+            // 4. SQL 실행
+            int count = ps.executeUpdate();
+            // 5. SQL 결과에 따른 로직/리턴/확인
+            if( count == 1 ) return true; // 수정sql 결과가 1개이면 수정성공
+            return false;   // 수정 sql결과가 1이 아니면 수정실패
+        } catch (Exception e) { System.out.println(e); }
+        return false; // 예외발생시 수정실패
+    }
+
 
 
 }// class e
