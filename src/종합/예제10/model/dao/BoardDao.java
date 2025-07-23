@@ -56,7 +56,7 @@ public class BoardDao {
         // ArrayList<BoardDto> : *배열* 대신에 다양한 편의성 기능을 제공하는 ArrayList 클래스
         //  3 = int타입 , 3 5 7 = int int int ---> int[]
         //  bcontent/bwriter = BoardDto, bcontent/bwriter bcontent/bwriter bcontent/bwriter = BoardDto BoardDto BoardDto
-        //  ---> BoardDto[] ---> ArrayList
+        //  ---> BoardDto[] ---> ArrayList<BoardDto>
         ArrayList<BoardDto> list = new ArrayList<>(); // 조회된 레코드(DTO) 들을 저장할 리스트 선언
         try{
         // 1. SQL 작성
@@ -67,7 +67,7 @@ public class BoardDao {
         // 4. SQL 실행 , select = executeQuery()
         ResultSet rs = ps.executeQuery();
         // 5. SQL 결과에 따른 로직/리턴/확인
-                // 1) select 조회결과를 레코드/행/가로단위 하나씩 조회
+            // 1) select 조회결과를 레코드/행/가로단위 하나씩 조회
             while( rs.next() ) { // rs.next() : ResultSet 인터페이스가 갖는 (조회)결과 테이블에서 다음레코드 이동 뜻
                 int bno = rs.getInt( "bno" ); // rs.get타입("가져올속성명 or 번호")
                 String bcontent = rs.getString( "bcontent" );
@@ -101,7 +101,7 @@ public class BoardDao {
         try{
             String sql = "update board set bcontent = ? where bno = ? ";  // 1. SQL 작성
             PreparedStatement ps = conn.prepareStatement(sql); // 2. SQL 기재
-            // 3. SQL 매개변수 대입, SQL 문법내 ? 개수만큼 대입
+            // 3. SQL 매개변수 대입,
             ps.setString(1 , boardDto.getBcontent() ); // .setString() 사용한 이유 : bcontent 가 문자열이라서
             ps.setInt(2 , boardDto.getBno() ); // 2 작성한 이유 : SQL 문법내 두번째 ? 자리에 bno 값 대입
             // 4. SQL 실행

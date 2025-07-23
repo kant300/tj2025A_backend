@@ -38,7 +38,7 @@ public class BoardView {
             } catch ( Exception e ) {
                 System.out.println("[오류] 관리자에게 문의 < 010-3333-3333 >");
             }
-        }
+        }// for e
     }
 
     // (1) 등록 화면 구현
@@ -81,19 +81,16 @@ public class BoardView {
 
     // (4) 수정 화면 구현
     public void boardUpdate() {
-        //
+        // 1. 입력받기
         System.out.print("수정할 게시물 번호 : "); int bno = scan.nextInt();
                 scan.nextLine();
         System.out.print("수정할 게시물 내용 : "); String bcontent = scan.nextLine();
+        // 2. controller 전달하기 // 3. 전달후 (결과)리턴값 저장하기
         boolean result = boardController.boardUpdate( bno, bcontent );
-        if( result ) {
-            System.out.println("[안내] 수정 성공"); }
-        else{
-            System.out.println("[경고] 수정 실패");}
-        //
-         //
-         //
-         //
+        // 4. 리턴된 값에 따른 출력하기
+        if( result ) { System.out.println("[안내] 수정 성공"); }
+        else{ System.out.println("[경고] 수정 실패");}
+
 
     }
 
