@@ -98,7 +98,7 @@ public class WaitingDao {
     public boolean waitingUpdate ( WaitingDto waitingDto ) {
         try{
             // 1. SQL 작성한다.
-            String sql = "update watiting set wcount = ? where wno = ?";
+            String sql = "update waiting set wcount = ? where wno = ?";
             // 2. SQL 기재한다.
             PreparedStatement ps = conn.prepareStatement(sql);
             // 3. SQL 매개변수 대입 , SQL 문법내 ? 개수만큼 대입

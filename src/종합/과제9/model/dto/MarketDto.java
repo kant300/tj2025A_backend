@@ -12,7 +12,7 @@ public class MarketDto {
     private String pdate;
 
     // 생성자 , 메소드 자동완성
-    public MarketDto() { }
+    public MarketDto() { }  //기본
     public MarketDto(int pno, String puser, String pname, int pprice, String pcontent, String ppwd, boolean psale, String pdate) {
         this.pno = pno;
         this.puser = puser;
@@ -102,16 +102,18 @@ public class MarketDto {
                 ", pdate='" + pdate + '\'' +
                 '}';
     }
+    // 등록 기능을 위한 생성자
 
-    public MarketDto(int pno, String ppwd, String pname, String pcontent, int pprice, boolean psale) {
+    public MarketDto(int pno, String puser, String pname, int pprice, String pcontent, String ppwd) {
         this.pno = pno;
-        this.ppwd = ppwd;
+        this.puser = puser;
         this.pname = pname;
-        this.pcontent = pcontent;
         this.pprice = pprice;
-        this.psale = psale;
+        this.pcontent = pcontent;
+        this.ppwd = ppwd;
     }
 
+    // 수정과 삭제를 위한 생성자
     public MarketDto(int pno, String ppwd) {
         this.pno = pno;
         this.ppwd = ppwd;
