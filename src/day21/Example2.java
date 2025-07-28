@@ -5,8 +5,7 @@ import java.util.Scanner;
 
 // [2] 시계 스레드
 class 시계스레드 implements Runnable{
-    @Override
-    public void run() {
+    @Override public void run() {
         for( ; ; ) {//무한루프
             // 1. 현재시간 출력
             System.out.println( LocalTime.now() );
@@ -15,14 +14,14 @@ class 시계스레드 implements Runnable{
             catch ( Exception e ){ }
         }
     }
-}
+}// class e
 // [3] 타이머 스레드
 class  타이머스레드 extends Thread{
     boolean state = true;   // 무한루프 실행여부;
     @Override public void run() {
         int second = 0; // 타이머가 계산하는 초
         for( ; ; ) {
-            if (state == false) break; //상태가 false이면 실행종료
+            if ( state == false ) break; //상태가 false 이면 실행종료
             second++;  // 1초 증가
             System.out.println("[타이머] 초 : "+ second);   // 출력
             try{ Thread.sleep(1000); } //현재스레드를 1초간 일시정시
@@ -53,10 +52,7 @@ public class Example2 {
                 thread2.start(); // 스레드객체 실행
             }else  if( ch == 2 ) { // 타이머 스레드 종료
                 if( thread2 != null )thread2.state = false; // 상태변경해서 안전하게 종료
-
             }
-
         }
-
     }//main e
 }// class e

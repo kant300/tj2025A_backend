@@ -99,7 +99,7 @@ public class Example1 {
         // [1] 단일(싱글) 스레드 예 : 위에서 아래 순으로 실행
         // 1) 출력 5번
         for( int i = 1 ; i<=5 ; i++ ){
-            System.out.println("[1] MAIN 스레드가 읽어드리는 코드"); // main메소드가 처리하는 코드
+            System.out.println("[1] MAIN 스레드가 읽어드리는 코드"+i); // main메소드가 처리하는 코드
         }// for e
         // 2) 소리 5번
         for ( int i= 1 ; i <=5; i++ ){
@@ -112,10 +112,11 @@ public class Example1 {
         // [2] 멀티 스레드 예 : 익명 구현체 : 인터페이스타입을 클래스없이 직접 구현
         // 1) 출력 5번
         for( int i = 1 ; i<=5 ; i++ ){
-            System.out.println("[1] MAIN 스레드가 읽어드리는 코드");// main메소드가 처리하는 코드
+            System.out.println("[1] MAIN 스레드가 읽어드리는 코드"+i);// main메소드가 처리하는 코드
             try{ Thread.sleep( 1000 ); }//
             catch ( Exception e ){}
         }// for e
+
         // 2) 소리 5번 : 익명 구현체 , new 인터페이스타입(){ 추상메소드구현; };
         Runnable runnable1 = new Runnable(){
             // run 추상메소드 구현
@@ -148,7 +149,7 @@ public class Example1 {
 
         // 2) 출력 5번
         for( int i = 1 ; i<=5 ; i++ ){
-            System.out.println("[1] MAIN 스레드가 읽어드리는 코드");// main메소드가 처리하는 코드
+            System.out.println("[1] MAIN 스레드가 읽어드리는 코드"+i);// main메소드가 처리하는 코드
             try{ Thread.sleep( 1000 ); }
             catch ( Exception e ){}
         }// for e
@@ -161,7 +162,7 @@ public class Example1 {
 
         // 2) 출력 5번
         for( int i = 1 ; i<=5 ; i++ ){
-            System.out.println("[3] MAIN 스레드가 읽어드리는 코드");// main메소드가 처리하는 코드
+            System.out.println("[3] MAIN 스레드가 읽어드리는 코드"+i);// main메소드가 처리하는 코드
             try{ Thread.sleep( 1000 ); }//
             catch ( Exception e ){}
         }// for e
@@ -174,7 +175,7 @@ public class Example1 {
 
         // 2) 출력 5번
         for( int i = 1 ; i<=5 ; i++ ){
-            System.out.println("[3] MAIN 스레드가 읽어드리는 코드");// main메소드가 처리하는 코드
+            System.out.println("[3] MAIN 스레드가 읽어드리는 코드" +i);// main메소드가 처리하는 코드
             try{ Thread.sleep( 1000 ); }//
             catch ( Exception e ){}
         }// for e
