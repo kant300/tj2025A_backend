@@ -1,5 +1,5 @@
 package 종합.과제9.controller;
-
+/*
 import 종합.과제9.model.dto.MarketDto;
 
 import java.util.ArrayList;
@@ -28,9 +28,10 @@ public class MarketController {
     public ArrayList<MarketDto> marketPrint() {
         // - 유효성검사 ~ // - 매개변수~
         // 3. dao에게 요청후 결과받기
-        ArrayList<MarketDto> result = marketDao.marketPrint();
+       // ArrayList<MarketDto> result = marketDao.marketPrint();
         // 4. 결과를 view에게 리턴한다.
         return result;
     }
 
 } //class e
+*/

@@ -1,5 +1,5 @@
 package 종합.과제9.model.dto;
-
+/*
 public class MarketDto {
     // 1. 멤버변수
     private int pno;
@@ -119,3 +119,4 @@ public class MarketDto {
         this.ppwd = ppwd;
     }
 }// class e
+*/

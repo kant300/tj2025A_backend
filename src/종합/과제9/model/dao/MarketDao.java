@@ -1,5 +1,5 @@
 package 종합.과제9.model.dao;
-
+/*
 import 종합.과제9.model.dto.MarketDto;
 
 import java.sql.Connection;
@@ -72,12 +72,12 @@ public class MarketDao {
                 String pname = rs.getString( "pname" );
                 int pprice = rs.getInt( "pprice" );
                 String puser = rs.getString( "puser" );
-                Pdate pdate = rs.getDate( "pdate" );
-                boolean psale = rs.getPsale( true );
-                MarketDto marketDto = new MarketDto( pno , pname, pprice , puser , pdate ,true );
+               // Pdate pdate = rs.getDate( "pdate" );
+                //boolean psale = rs.getPsale( true );
+                //MarketDto marketDto = new MarketDto( pno , pname, pprice , puser , pdate ,true );
                 // 레코드1개(열6걔 --> DTO(멤버변수6개) 1개
                 // 3) 생성된 dto를 리스트에 담아주기
-                list.add( marketDto );
+               // list.add( marketDto );
             }// while e
         }catch ( Exception e ){ System.out.println(e); }
         return list;
@@ -85,3 +85,4 @@ public class MarketDao {
 
 
 }//class e
+*/
