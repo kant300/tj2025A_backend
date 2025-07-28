@@ -31,3 +31,5 @@
     1. 삭제할 저장소의 github 웹페이지 예시]https://github.com/itdanjalog/test22
     2. 저장소 [Settings] 메뉴 클릭후
     3. 스크롤 쭉 내리면 'Danger Zone' : Delete this repository
+
+
