@@ -78,7 +78,7 @@ public class Example3 {
         // [활용처] 컬렉션 프레임워크
         ArrayList< String > sList = new ArrayList<>();
         ArrayList< Integer > ilist = new ArrayList<>();
-        // * ArrayList : 타입/클래스 , < String > : ArrayList 안에서
+        // * ArrayList : 타입/클래스 , < String > : ArrayList 안에서 사용할 타입
 
         // [4] 제네릭타입 여러개
         Dto< String , Integer > dto = new Dto<>();
